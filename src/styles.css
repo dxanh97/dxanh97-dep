@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'YesevaOne';
+  src: url('./assets/fonts/YesevaOne-Regular.ttf');
+}
+
+* {
+  font-family: 'YesevaOne';
+}
+body {
+  margin: 0;
+}
