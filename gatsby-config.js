@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "dxanh97",
+    title: 'dxanh97',
   },
-  plugins: ["gatsby-plugin-styled-components"],
+  plugins: ['gatsby-plugin-styled-components', 'gatsby-plugin-typescript'],
 };
