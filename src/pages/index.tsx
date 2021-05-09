@@ -7,6 +7,7 @@ import {
   Contact,
   AboutMe,
   WorkExperiences,
+  TechStacks,
 } from '@dxanh97/components';
 import '../styles.css';
 
@@ -14,7 +15,7 @@ const Wrapper = styled.div`
   border: 1px solid;
   border-radius: 8px;
   background: #fef8ec;
-  /* text-transform: lowercase; */
+  text-transform: lowercase;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -29,7 +30,9 @@ const Wrapper = styled.div`
   }
   & > div.work-experiences {
     width: 60%;
-    padding: 16px;
+  }
+  & > div.additional {
+    width: 40%;
   }
 `;
 
@@ -49,7 +52,9 @@ const IndexPage = () => {
         <div className="work-experiences">
           <WorkExperiences />
         </div>
-        <div className="additional">oke</div>
+        <div className="additional">
+          <TechStacks />
+        </div>
       </Wrapper>
     </Container>
   );
