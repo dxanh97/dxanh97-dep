@@ -1,7 +1,11 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import { Container, PortfolioHeader } from '@dxanh97/components';
+import {
+  ContactAndAbout,
+  Container,
+  PortfolioHeader,
+} from '@dxanh97/components';
 import '../styles.css';
 
 const Wrapper = styled.div`
@@ -15,7 +19,8 @@ const IndexPage = () => {
   return (
     <Container>
       <Wrapper>
-      <PortfolioHeader />
+        <PortfolioHeader />
+        <ContactAndAbout />
       </Wrapper>
     </Container>
   );

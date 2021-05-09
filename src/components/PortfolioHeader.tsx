@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   text-align: center;
   border-bottom: 1px solid;
   & > div.name {
+    font-family: 'YesevaOne';
     padding: 20px;
     padding-bottom: 8px;
     font-size: 50px;
@@ -16,6 +17,7 @@ const Wrapper = styled.div`
     }
   }
   & > div.title {
+    font-family: 'YesevaOne';
     padding: 0 20px 20px;
     font-size: 20px;
     ${down('md')} {
