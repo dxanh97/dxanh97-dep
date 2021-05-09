@@ -1,13 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import { down } from 'styled-breakpoints';
 import { IoCall, IoMail, IoLogoLinkedin, IoLogoGithub } from 'react-icons/io5';
 import { SectionHeader } from '.';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  ${down('sm')} {
+    flex-direction: column;
+  }
+
   & > div.contact {
+    ${down('sm')} {
+      width: 100%;
+      box-sizing: border-box;
+    }
     width: 40%;
     padding: 16px;
     & > div.info-row {
@@ -24,6 +32,10 @@ const Wrapper = styled.div`
     }
   }
   & > div.about {
+    ${down('sm')} {
+      width: 100%;
+      box-sizing: border-box;
+    }
     width: 60%;
     padding: 16px;
     & p.content {
