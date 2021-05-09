@@ -2,9 +2,17 @@
   font-family: 'YesevaOne';
   src: url('./assets/fonts/YesevaOne-Regular.ttf');
 }
+@font-face {
+  font-family: 'LoraItalic';
+  src: url('./assets/fonts/Lora-BoldItalic.ttf');
+}
+@font-face {
+  font-family: 'Lora';
+  src: url('./assets/fonts/Lora-Regular.ttf');
+}
 
 * {
-  font-family: 'YesevaOne';
+  font-family: 'Lora';
 }
 body {
   margin: 0;
