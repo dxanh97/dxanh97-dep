@@ -7,12 +7,19 @@
   src: url('./assets/fonts/Lora-BoldItalic.ttf');
 }
 @font-face {
-  font-family: 'Lora';
-  src: url('./assets/fonts/Lora-Regular.ttf');
+  font-family: 'Newsreader';
+  src: url('./assets/fonts/Newsreader-ExtraLight.ttf');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Newsreader';
+  src: url('./assets/fonts/Newsreader-Medium.ttf');
+  font-weight: bold;
 }
 
 * {
-  font-family: 'Lora';
+  font-family: 'Newsreader';
+  font-size: 20px;
 }
 body {
   margin: 0;

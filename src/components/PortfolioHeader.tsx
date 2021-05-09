@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   & > div.title {
     font-family: 'YesevaOne';
     padding: 0 20px 20px;
-    font-size: 20px;
+    font-size: 24px;
     ${down('md')} {
       padding: 0 16px 16px;
       font-size: 16px;

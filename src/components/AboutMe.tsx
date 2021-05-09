@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   width: 100%;
   padding: 16px;
   & p.content {
-    margin-top: 4px;
+    margin: 4px 0 0;
   }
 `;
 
