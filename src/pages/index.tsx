@@ -2,9 +2,10 @@ import React from 'react';
 
 import styled from 'styled-components';
 import {
-  ContactAndAbout,
   Container,
   PortfolioHeader,
+  Contact,
+  AboutMe,
   WorkExperiences,
 } from '@dxanh97/components';
 import '../styles.css';
@@ -20,6 +21,12 @@ const Wrapper = styled.div`
   & > div.header {
     width: 100%;
   }
+  & > div.contact {
+    width: 100%;
+  }
+  & > div.about-me {
+    width: 100%;
+  }
   & > div.work-experiences {
     width: 60%;
     padding: 16px;
@@ -33,10 +40,16 @@ const IndexPage = () => {
         <div className="header">
           <PortfolioHeader />
         </div>
-        <ContactAndAbout />
+        <div className="contact">
+          <Contact />
+        </div>
+        <div className="about-me">
+          <AboutMe />
+        </div>
         <div className="work-experiences">
           <WorkExperiences />
         </div>
+        <div className="additional">oke</div>
       </Wrapper>
     </Container>
   );
