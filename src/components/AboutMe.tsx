@@ -4,10 +4,9 @@ import styled from 'styled-components';
 import { SectionHeader } from '.';
 
 const Wrapper = styled.div`
-  width: 100%;
   padding: 16px;
-  & p.content {
-    margin: 4px 0 0;
+  & > p.content {
+    margin: 16px 0 0;
   }
 `;
 
