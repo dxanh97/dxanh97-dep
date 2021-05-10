@@ -3,8 +3,12 @@ import styled from 'styled-components';
 import { SectionHeader } from '.';
 
 const Wrapper = styled.div`
+  padding: 16px;
   & > div.block {
     margin: 16px 0;
+    &:last-child {
+      margin: 16px 0 0;
+    }
     & > p.title {
       margin: 8px 0;
       font-weight: bold;
