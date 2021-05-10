@@ -10,11 +10,17 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 16px;
     ${down('md')} {
       flex-direction: column;
     }
     & > div.info-row {
-      padding: 8px 0 0;
+      ${down('md')} {
+        margin-bottom: 8px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
       & > svg {
         margin-right: 8px;
         font-size: 20px;
