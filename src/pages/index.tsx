@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components';
+import { down } from 'styled-breakpoints';
 import {
   Container,
   PortfolioHeader,
@@ -8,7 +9,9 @@ import {
   AboutMe,
   WorkExperiences,
   TechStacks,
+  Hobbies,
 } from '@dxanh97/components';
+
 import '../styles.css';
 
 const Wrapper = styled.div`
@@ -30,9 +33,15 @@ const Wrapper = styled.div`
   }
   & > div.work-experiences {
     width: 60%;
+    ${down('sm')} {
+      width: 100%;
+    }
   }
   & > div.additional {
     width: 40%;
+    ${down('sm')} {
+      width: 100%;
+    }
   }
 `;
 
@@ -54,6 +63,7 @@ const IndexPage = () => {
         </div>
         <div className="additional">
           <TechStacks />
+          <Hobbies />
         </div>
       </Wrapper>
     </Container>

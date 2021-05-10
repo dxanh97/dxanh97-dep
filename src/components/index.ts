@@ -5,6 +5,7 @@ import Contact from './Contact';
 import AboutMe from './AboutMe';
 import WorkExperiences from './WorkExperiences';
 import TechStacks from './TechStacks';
+import Hobbies from './Hobbies';
 
 export {
   Container,
@@ -14,4 +15,5 @@ export {
   AboutMe,
   WorkExperiences,
   TechStacks,
+  Hobbies,
 };
