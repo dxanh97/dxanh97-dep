@@ -15,6 +15,10 @@ import {
 import '../styles.css';
 
 const Wrapper = styled.div`
+  margin: 32px 0;
+  ${down('md')} {
+    margin: 16px 0;
+  }
   border: 1px solid;
   border-radius: 8px;
   background: #fef8ec;

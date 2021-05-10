@@ -30,10 +30,9 @@ const Wrapper = styled.div`
       border-radius: 4px;
       padding: 4px 8px;
       margin: 0 4px 4px 0;
-      vertical-align: middle;
       & > svg {
         margin-right: 4px;
-        vertical-align: text-top;
+        vertical-align: middle;
         font-size: 16px;
       }
     }
