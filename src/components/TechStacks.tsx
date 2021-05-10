@@ -13,6 +13,7 @@ import {
   SiGit,
   SiEslint,
   SiPrettier,
+  SiVim,
 } from 'react-icons/si';
 
 import { SectionHeader } from '.';
@@ -23,19 +24,19 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 8px;
-  }
-`;
-const Badge = styled.span`
-  border: 1px solid;
-  border-radius: 4px;
-  padding: 4px 8px;
-  margin: 0 4px 4px 0;
-  vertical-align: middle;
-  & > svg {
-    margin-right: 4px;
-    vertical-align: text-top;
-    font-size: 16px;
+    margin-top: 16px;
+    & > span.badge {
+      border: 1px solid;
+      border-radius: 4px;
+      padding: 4px 8px;
+      margin: 0 4px 4px 0;
+      vertical-align: middle;
+      & > svg {
+        margin-right: 4px;
+        vertical-align: text-top;
+        font-size: 16px;
+      }
+    }
   }
 `;
 
@@ -52,6 +53,7 @@ const stacks = [
   { icon: <SiGit />, text: 'Git' },
   { icon: <SiEslint />, text: 'ESLint' },
   { icon: <SiPrettier />, text: 'Prettier' },
+  { icon: <SiVim />, text: 'Vim' },
 ];
 
 const TechStacks: React.FC = () => (
@@ -59,10 +61,10 @@ const TechStacks: React.FC = () => (
     <SectionHeader title="Tech Stacks" />
     <div className="badge-wrapper">
       {stacks.map((stack) => (
-        <Badge key={stack.text}>
+        <span key={stack.text} className="badge">
           {stack.icon}
           <span>{stack.text}</span>
-        </Badge>
+        </span>
       ))}
     </div>
   </Wrapper>
