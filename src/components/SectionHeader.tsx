@@ -12,6 +12,7 @@ interface WrapperProps {
 const Wrapper = styled.p`
   font-family: 'YesevaOne';
   font-size: 22px;
+  text-decoration: underline 3px;
   margin: 0;
   ${(props: WrapperProps) =>
     props.up &&
