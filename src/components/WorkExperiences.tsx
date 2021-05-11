@@ -88,8 +88,8 @@ const WorkExperiences: React.FC = () => (
         Lead Front-End team of 2 to develop several apps like:
         <br />• <b>PHR</b> (<b>Personal Health Record</b>) letting user to track
         their medical records and body indexes
-        <br />• <b>CDS</b> (<b>Control Disease System</b>) for HCDC to record
-        and manage the Covid-19 infection chains in <b>HCM</b> city.
+        <br />• <b>CDS</b> (<b>Control Disease System</b>) for <b>HCDC</b> to
+        record and manage the Covid-19 infection chains in <b>HCM</b> city.
       </p>
     </div>
     <div className="block">
