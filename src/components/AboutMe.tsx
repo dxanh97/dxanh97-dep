@@ -16,7 +16,7 @@ const AboutMe: React.FC = () => (
     <p className="content">
       A self-learning, open-minded software engineer. Expertise in
       JavaScript/TypeScript with over 3 years of experience. Software developing
-      is a craft and I'm aiming to be a better craftsman everyday.
+      is a craft and I'm aiming to be a better craftsman each day.
     </p>
   </Wrapper>
 );
