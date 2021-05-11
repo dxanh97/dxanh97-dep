@@ -5,6 +5,7 @@ import { down } from 'styled-breakpoints';
 const Wrapper = styled.div`
   text-align: center;
   border-bottom: 1px solid #005661;
+  border-bottom: 1px solid #0c006b;
   & > div.name {
     font-family: 'YesevaOne';
     padding: 20px;

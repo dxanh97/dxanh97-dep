@@ -28,6 +28,7 @@ const Wrapper = styled.div`
     margin-top: 16px;
     & > span.badge {
       border: 1px solid #005661;
+      border: 1px solid #0c006b;
       border-radius: 4px;
       padding: 4px 8px;
       margin: 0 4px 4px 0;

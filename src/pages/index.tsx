@@ -21,8 +21,10 @@ const Wrapper = styled.div`
     margin: 16px 0;
   }
   border: 1px solid #005661;
+  border: 1px solid #0c006b;
   border-radius: 8px;
   background: #fef8ec;
+  background: #f2f1f8;
   text-transform: lowercase;
   display: flex;
   flex-direction: row;
