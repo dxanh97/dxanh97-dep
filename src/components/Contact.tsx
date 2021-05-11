@@ -28,7 +28,7 @@ const Wrapper = styled.div`
       }
       & > a {
         text-decoration: underline 1px;
-        color: #000000;
+        color: #005661;
       }
     }
   }

@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   ${down('md')} {
     margin: 16px 0;
   }
-  border: 1px solid;
+  border: 1px solid #005661;
   border-radius: 8px;
   background: #fef8ec;
   text-transform: lowercase;

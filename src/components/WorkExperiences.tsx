@@ -16,7 +16,7 @@ const Wrapper = styled.div`
       height: 6px;
       width: 6px;
       border-radius: 50%;
-      background: #000000;
+      background: #005661;
     }
     &::after {
       content: '';
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
       top: 20px;
       left: 2px;
       height: calc(100% - 24px);
-      border-left: 1px solid;
+      border-left: 1px solid #005661;
     }
     &:last-child {
       margin: 16px 0 0;
@@ -33,7 +33,7 @@ const Wrapper = styled.div`
       margin: 8px 0;
       & a {
         text-decoration: underline 1px;
-        color: #000000;
+        color: #005661;
       }
     }
     & > p.time {
