@@ -5,7 +5,27 @@ import { SectionHeader } from '.';
 const Wrapper = styled.div`
   padding: 16px;
   & > div.block {
+    position: relative;
     margin: 16px 0;
+    padding-left: 16px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 0;
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+      background: #000000;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 2px;
+      height: calc(100% - 24px);
+      border-left: 1px solid;
+    }
     &:last-child {
       margin: 16px 0 0;
     }
