@@ -28,6 +28,7 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   & > div.header {
     width: 100%;
+    margin-bottom: 16px;
   }
   & > div.contact {
     width: 100%;
