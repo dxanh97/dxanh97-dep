@@ -17,7 +17,7 @@ const Wrapper = styled.div`
       width: 6px;
       border-radius: 50%;
       background: #005661;
-      background: #0c006b;
+      background: ${(props) => props.theme.text};
     }
     &::after {
       content: '';
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
       left: 2px;
       height: calc(100% - 24px);
       border-left: 1px solid #005661;
-      border-left: 1px solid #0c006b;
+      border-left: 1px solid ${(props) => props.theme.text};
     }
     &:last-child {
       margin: 16px 0 0;
@@ -36,7 +36,7 @@ const Wrapper = styled.div`
       & a {
         text-decoration: underline 1px;
         color: #005661;
-        color: #0c006b;
+        color: ${(props) => props.theme.text};
       }
     }
     & > p.time {

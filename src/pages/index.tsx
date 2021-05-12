@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { down } from 'styled-breakpoints';
 import {
   Container,
@@ -17,10 +17,8 @@ import '../styles.css';
 
 const Wrapper = styled.div`
   display: flex;
-  background: #f9f1e1;
-  background: #edecf8;
-  color: #005661;
-  color: #0c006b;
+  background: ${(props) => props.theme.backdrop};
+  color: ${(props) => props.theme.text};
 `;
 
 const Paper = styled.div`
@@ -28,11 +26,9 @@ const Paper = styled.div`
   ${down('md')} {
     margin: 0 0 16px;
   }
-  border: 1px solid #005661;
-  border: 1px solid #0c006b;
+  border: 1px solid ${(props) => props.theme.text};
   border-radius: 8px;
-  background: #fef8ec;
-  background: #f2f1f8;
+  background: ${(props) => props.theme.paper};
   text-transform: lowercase;
   display: flex;
   flex-direction: row;
@@ -61,39 +57,59 @@ const Paper = styled.div`
   }
 `;
 
+type Theme = {
+  backdrop: string;
+  paper: string;
+  text: string;
+};
+
+const luxTheme: Theme = {
+  backdrop: '#f9f1e1',
+  paper: '#fef8ec',
+  text: '#005661',
+};
+
+const lilacTheme: Theme = {
+  backdrop: '#edecf8',
+  paper: '#f2f1f8',
+  text: '#0c006b',
+};
+
 const IndexPage = () => {
   return (
-    <Wrapper>
-      <Container>
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title>{'<dxanh97 />'}</title>
-          <link
-            rel="icon"
-            type="image/png"
-            href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/rose_1f339.png"
-          ></link>
-        </Helmet>
-        <Paper>
-          <div className="header">
-            <PortfolioHeader />
-          </div>
-          <div className="contact">
-            <Contact />
-          </div>
-          <div className="about-me">
-            <AboutMe />
-          </div>
-          <div className="work-experiences">
-            <WorkExperiences />
-          </div>
-          <div className="additional">
-            <TechStacks />
-            <Hobbies />
-          </div>
-        </Paper>
-      </Container>
-    </Wrapper>
+    <ThemeProvider theme={lilacTheme}>
+      <Wrapper>
+        <Container>
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>{'<dxanh97 />'}</title>
+            <link
+              rel="icon"
+              type="image/png"
+              href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/rose_1f339.png"
+            ></link>
+          </Helmet>
+          <Paper>
+            <div className="header">
+              <PortfolioHeader />
+            </div>
+            <div className="contact">
+              <Contact />
+            </div>
+            <div className="about-me">
+              <AboutMe />
+            </div>
+            <div className="work-experiences">
+              <WorkExperiences />
+            </div>
+            <div className="additional">
+              <TechStacks />
+              <Hobbies />
+            </div>
+          </Paper>
+        </Container>
+      </Wrapper>
+    </ThemeProvider>
   );
 };
 
