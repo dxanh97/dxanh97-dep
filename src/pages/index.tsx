@@ -12,6 +12,7 @@ import {
   TechStacks,
   Hobbies,
 } from '@dxanh97/components';
+import { themes } from '@dxanh97/constants';
 
 import '../styles.css';
 
@@ -57,27 +58,9 @@ const Paper = styled.div`
   }
 `;
 
-type Theme = {
-  backdrop: string;
-  paper: string;
-  text: string;
-};
-
-const luxTheme: Theme = {
-  backdrop: '#f9f1e1',
-  paper: '#fef8ec',
-  text: '#005661',
-};
-
-const lilacTheme: Theme = {
-  backdrop: '#edecf8',
-  paper: '#f2f1f8',
-  text: '#0c006b',
-};
-
 const IndexPage = () => {
   return (
-    <ThemeProvider theme={lilacTheme}>
+    <ThemeProvider theme={themes.machineTheme}>
       <Wrapper>
         <Container>
           <Helmet>

@@ -16,7 +16,8 @@
     "jsx": "react",
     "baseUrl": "./",
     "paths": {
-      "@dxanh97/components": ["src/components"]
+      "@dxanh97/components": ["src/components"],
+      "@dxanh97/constants": ["src/constants"]
     }
   },
   "include": ["src"]
