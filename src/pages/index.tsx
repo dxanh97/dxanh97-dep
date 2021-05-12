@@ -16,9 +16,17 @@ import {
 import '../styles.css';
 
 const Wrapper = styled.div`
+  display: flex;
+  background: #f9f1e1;
+  background: #edecf8;
+  color: #005661;
+  color: #0c006b;
+`;
+
+const Paper = styled.div`
   margin: 32px 0;
   ${down('md')} {
-    margin: 16px 0;
+    margin: 0 0 16px;
   }
   border: 1px solid #005661;
   border: 1px solid #0c006b;
@@ -55,35 +63,37 @@ const Wrapper = styled.div`
 
 const IndexPage = () => {
   return (
-    <Container>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>{'<dxanh97 />'}</title>
-        <link
-          rel="icon"
-          type="image/png"
-          href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/rose_1f339.png"
-        ></link>
-      </Helmet>
-      <Wrapper>
-        <div className="header">
-          <PortfolioHeader />
-        </div>
-        <div className="contact">
-          <Contact />
-        </div>
-        <div className="about-me">
-          <AboutMe />
-        </div>
-        <div className="work-experiences">
-          <WorkExperiences />
-        </div>
-        <div className="additional">
-          <TechStacks />
-          <Hobbies />
-        </div>
-      </Wrapper>
-    </Container>
+    <Wrapper>
+      <Container>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>{'<dxanh97 />'}</title>
+          <link
+            rel="icon"
+            type="image/png"
+            href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/rose_1f339.png"
+          ></link>
+        </Helmet>
+        <Paper>
+          <div className="header">
+            <PortfolioHeader />
+          </div>
+          <div className="contact">
+            <Contact />
+          </div>
+          <div className="about-me">
+            <AboutMe />
+          </div>
+          <div className="work-experiences">
+            <WorkExperiences />
+          </div>
+          <div className="additional">
+            <TechStacks />
+            <Hobbies />
+          </div>
+        </Paper>
+      </Container>
+    </Wrapper>
   );
 };
 

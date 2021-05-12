@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { up, down } from 'styled-breakpoints';
 
-const StyledDiv = styled.div`
+const Wrapper = styled.div`
   margin: auto;
   ${down('md')} {
     width: calc(100% - 2em);
@@ -19,6 +19,6 @@ const StyledDiv = styled.div`
   }
 `;
 
-const Container: React.FC = ({ children }) => <StyledDiv>{children}</StyledDiv>;
+const Container: React.FC = ({ children }) => <Wrapper>{children}</Wrapper>;
 
 export default Container;
