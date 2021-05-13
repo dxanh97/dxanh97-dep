@@ -47,9 +47,20 @@ interface Props {
 }
 
 const ThemePicker: React.FC<Props> = ({ onSelect }) => {
-  const [selected, setSelected] = useState(Object.values(themes)[0]);
+  const [selected, setSelected] = useState<Theme>();
   useEffect(() => {
-    onSelect(selected);
+    const cacheTheme = localStorage.getItem('dxanh97.theme');
+    if (cacheTheme) {
+      setSelected(JSON.parse(cacheTheme));
+    } else {
+      localStorage.clear();
+    }
+  }, []);
+  useEffect(() => {
+    if (selected) {
+      onSelect(selected);
+      localStorage.setItem('dxanh97.theme', JSON.stringify(selected));
+    }
   }, [selected]);
   return (
     <Wrapper>
@@ -58,7 +69,7 @@ const ThemePicker: React.FC<Props> = ({ onSelect }) => {
           key={theme.backdrop}
           themeSet={theme}
           onClick={() => setSelected(theme)}
-          selected={selected.key === theme.key}
+          selected={selected?.key === theme.key}
         >
           {Object.keys(themes)[index]}
         </ThemeButton>
