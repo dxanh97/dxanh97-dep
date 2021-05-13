@@ -1,3 +1,1 @@
-import * as themes from './themes';
-
-export { themes };
+export { default as themes } from './themes';

@@ -12,6 +12,7 @@ module.exports = {
         alias: {
           '@dxanh97/components': 'src/components',
           '@dxanh97/constants': 'src/constants',
+          '@dxanh97/models': 'src/models',
         },
         extensions: [],
       },

@@ -1,19 +1,9 @@
-import Container from './Container';
-import SectionHeader from './SectionHeader';
-import PortfolioHeader from './PortfolioHeader';
-import Contact from './Contact';
-import AboutMe from './AboutMe';
-import WorkExperiences from './WorkExperiences';
-import TechStacks from './TechStacks';
-import Hobbies from './Hobbies';
-
-export {
-  Container,
-  SectionHeader,
-  PortfolioHeader,
-  Contact,
-  AboutMe,
-  WorkExperiences,
-  TechStacks,
-  Hobbies,
-};
+export { default as Container } from './Container';
+export { default as SectionHeader } from './SectionHeader';
+export { default as PortfolioHeader } from './PortfolioHeader';
+export { default as Contact } from './Contact';
+export { default as AboutMe } from './AboutMe';
+export { default as WorkExperiences } from './WorkExperiences';
+export { default as TechStacks } from './TechStacks';
+export { default as Hobbies } from './Hobbies';
+export { default as ThemePicker } from './ThemePicker';

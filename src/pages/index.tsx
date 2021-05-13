@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Helmet } from 'react-helmet';
 import styled, { ThemeProvider } from 'styled-components';
@@ -11,7 +11,9 @@ import {
   WorkExperiences,
   TechStacks,
   Hobbies,
+  ThemePicker,
 } from '@dxanh97/components';
+import { Theme } from '@dxanh97/models';
 import { themes } from '@dxanh97/constants';
 
 import '../styles.css';
@@ -59,9 +61,12 @@ const Paper = styled.div`
 `;
 
 const IndexPage = () => {
+  const [theme, setTheme] = useState<Theme>(themes.lilac);
+
   return (
-    <ThemeProvider theme={themes.machineTheme}>
+    <ThemeProvider theme={theme}>
       <Wrapper>
+        <ThemePicker onSelect={setTheme} />
         <Container>
           <Helmet>
             <meta charSet="utf-8" />
