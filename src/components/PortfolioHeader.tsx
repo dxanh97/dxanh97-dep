@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   text-align: center;
   border-bottom: 1px solid #005661;
   border-bottom: 1px solid ${(props) => props.theme.text};
+  transition: 0.05s ease;
   & > div.name {
     font-family: 'YesevaOne';
     padding: 20px;
