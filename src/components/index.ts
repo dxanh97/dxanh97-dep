@@ -7,3 +7,4 @@ export { default as WorkExperiences } from './WorkExperiences';
 export { default as TechStacks } from './TechStacks';
 export { default as Hobbies } from './Hobbies';
 export { default as ThemePicker } from './ThemePicker';
+export { default as TopBar } from './TopBar';

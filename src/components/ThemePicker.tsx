@@ -1,26 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import { down } from 'styled-breakpoints';
+import styled, { css } from 'styled-components';
 
 import { Theme } from '@dxanh97/models';
 import { themes } from '@dxanh97/constants';
-import { hexToRgba } from '@dxanh97/utils';
 
 const Wrapper = styled.div`
   position: absolute;
-  top: 32px;
+  top: 4px;
   right: 4px;
   display: flex;
-  flex-direction: column;
-  padding: 4px;
-  border: 1px solid;
-  border-color: ${(props) => hexToRgba(props.theme.text, 0.6)};
-  background: ${(props) => hexToRgba(props.theme.text, 0.1)};
+  flex-direction: row;
+  padding: 2px;
   border-radius: 4px;
+  vertical-align: middle;
 `;
 
 interface ThemeButtonProps {
   themeSet: Theme;
+  selected: boolean;
 }
 
 const ThemeButton = styled.button`
@@ -29,19 +26,19 @@ const ThemeButton = styled.button`
   border-radius: 4px;
   border: none;
   cursor: pointer;
+  font-size: 16px;
+  font-family: 'YesevaOne';
+  font-weight: bold;
+  padding: 2px 4px;
+  color: ${(props: ThemeButtonProps) => props.themeSet.paper};
+  background: ${(props: ThemeButtonProps) => props.themeSet.text};
+  ${(props: ThemeButtonProps) =>
+    props.selected &&
+    css`
+      text-decoration: underline 2px;
+    `}
   &:not(:last-child) {
-    margin-bottom: 4px;
-  }
-  & > div {
-    line-height: 20px;
-    border-radius: 2px;
-    min-width: 20px;
-    min-height: 20px;
-    color: ${(props: ThemeButtonProps) => props.themeSet.text};
-    background: ${(props: ThemeButtonProps) => props.themeSet.paper};
-    ${down('md')} {
-      font-size: 10px;
-    }
+    margin-right: 4px;
   }
 `;
 
@@ -56,13 +53,14 @@ const ThemePicker: React.FC<Props> = ({ onSelect }) => {
   }, [selected]);
   return (
     <Wrapper>
-      {Object.values(themes).map((theme) => (
+      {Object.values(themes).map((theme, index) => (
         <ThemeButton
           key={theme.backdrop}
           themeSet={theme}
           onClick={() => setSelected(theme)}
+          selected={selected.key === theme.key}
         >
-          <div>{selected.key === theme.key && '𐄂'}</div>
+          {Object.keys(themes)[index]}
         </ThemeButton>
       ))}
     </Wrapper>

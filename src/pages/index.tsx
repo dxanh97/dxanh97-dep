@@ -12,6 +12,7 @@ import {
   TechStacks,
   Hobbies,
   ThemePicker,
+  TopBar,
 } from '@dxanh97/components';
 import { Theme } from '@dxanh97/models';
 import { themes } from '@dxanh97/constants';
@@ -66,8 +67,10 @@ const IndexPage = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Wrapper>
+      <TopBar>
         <ThemePicker onSelect={setTheme} />
+      </TopBar>
+      <Wrapper>
         <Container>
           <Helmet>
             <meta charSet="utf-8" />

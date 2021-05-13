@@ -5,18 +5,21 @@ const themes: {
 } = {
   luxi: {
     key: 1,
+    topBar: '#f2e7ca',
     backdrop: '#f9f1e1',
     paper: '#fef8ec',
     text: '#005661',
   },
   lila: {
     key: 2,
+    topBar: '#dedbf5',
     backdrop: '#edecf8',
     paper: '#f2f1f8',
     text: '#0c006b',
   },
   mach: {
     key: 3,
+    topBar: '#161b1e',
     backdrop: '#1d2528',
     paper: '#273136',
     text: '#f2fffc',
