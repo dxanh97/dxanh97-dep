@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
-
-import { Helmet } from 'react-helmet';
-import styled, { ThemeProvider } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import { down } from 'styled-breakpoints';
-import { Container, ThemePicker } from '@dxanh97/components';
 import {
   PortfolioHeader,
   Contact,
@@ -12,22 +9,10 @@ import {
   TechStacks,
   Hobbies,
 } from '@dxanh97/components/portfolio';
-import { Theme } from '@dxanh97/models';
-import { themes } from '@dxanh97/constants';
+import { Layout } from '@dxanh97/components';
 
 import '../styles.css';
 
-const Wrapper = styled.div`
-  display: flex;
-  min-height: 100vh;
-  background: ${(props) => props.theme.backdrop};
-  color: ${(props) => props.theme.text};
-`;
-const TopBar = styled.div`
-  position: relative;
-  background: ${(props) => props.theme.topBar};
-  height: 36px;
-`;
 const Paper = styled.div`
   margin: 32px 0;
   ${down('md')} {
@@ -64,47 +49,27 @@ const Paper = styled.div`
   }
 `;
 
-const IndexPage = () => {
-  const [theme, setTheme] = useState<Theme>(Object.values(themes)[0]);
-
-  return (
-    <ThemeProvider theme={theme}>
-      <TopBar>
-        <ThemePicker onSelect={setTheme} />
-      </TopBar>
-      <Wrapper>
-        <Container>
-          <Helmet>
-            <meta charSet="utf-8" />
-            <title>{'<dxanh97 />'}</title>
-            <link
-              rel="icon"
-              type="image/png"
-              href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/279/rose_1f339.png"
-            ></link>
-          </Helmet>
-          <Paper>
-            <div className="header">
-              <PortfolioHeader />
-            </div>
-            <div className="contact">
-              <Contact />
-            </div>
-            <div className="about-me">
-              <AboutMe />
-            </div>
-            <div className="work-experiences">
-              <WorkExperiences />
-            </div>
-            <div className="additional">
-              <TechStacks />
-              <Hobbies />
-            </div>
-          </Paper>
-        </Container>
-      </Wrapper>
-    </ThemeProvider>
-  );
-};
+const IndexPage = () => (
+  <Layout>
+    <Paper>
+      <div className="header">
+        <PortfolioHeader />
+      </div>
+      <div className="contact">
+        <Contact />
+      </div>
+      <div className="about-me">
+        <AboutMe />
+      </div>
+      <div className="work-experiences">
+        <WorkExperiences />
+      </div>
+      <div className="additional">
+        <TechStacks />
+        <Hobbies />
+      </div>
+    </Paper>
+  </Layout>
+);
 
 export default IndexPage;
