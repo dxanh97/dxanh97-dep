@@ -27,7 +27,7 @@ const Wrapper = styled.div`
       border-left: 1px solid ${(props) => props.theme.text};
     }
     &:last-child {
-      margin: 16px 0 0;
+      margin-bottom: 0;
     }
     & > p.title {
       margin: 8px 0;

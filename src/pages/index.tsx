@@ -20,6 +20,7 @@ import '../styles.css';
 
 const Wrapper = styled.div`
   display: flex;
+  min-height: 100vh;
   background: ${(props) => props.theme.backdrop};
   color: ${(props) => props.theme.text};
 `;

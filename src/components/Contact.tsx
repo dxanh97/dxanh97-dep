@@ -16,9 +16,8 @@ const Wrapper = styled.div`
     }
     & > div.info-row {
       ${down('md')} {
-        margin-bottom: 8px;
-        &:last-child {
-          margin-bottom: 0;
+        &:not(:last-child) {
+          margin-bottom: 8px;
         }
       }
       & > svg {
