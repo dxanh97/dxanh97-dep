@@ -3,17 +3,15 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import styled, { ThemeProvider } from 'styled-components';
 import { down } from 'styled-breakpoints';
+import { Container, ThemePicker } from '@dxanh97/components';
 import {
-  Container,
   PortfolioHeader,
   Contact,
   AboutMe,
   WorkExperiences,
   TechStacks,
   Hobbies,
-  ThemePicker,
-  TopBar,
-} from '@dxanh97/components';
+} from '@dxanh97/components/portfolio';
 import { Theme } from '@dxanh97/models';
 import { themes } from '@dxanh97/constants';
 
@@ -25,7 +23,11 @@ const Wrapper = styled.div`
   background: ${(props) => props.theme.backdrop};
   color: ${(props) => props.theme.text};
 `;
-
+const TopBar = styled.div`
+  position: relative;
+  background: ${(props) => props.theme.topBar};
+  height: 36px;
+`;
 const Paper = styled.div`
   margin: 32px 0;
   ${down('md')} {
