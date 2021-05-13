@@ -63,7 +63,7 @@ const Paper = styled.div`
 `;
 
 const IndexPage = () => {
-  const [theme, setTheme] = useState<Theme>(themes.lila);
+  const [theme, setTheme] = useState<Theme>(Object.values(themes)[0]);
 
   return (
     <ThemeProvider theme={theme}>

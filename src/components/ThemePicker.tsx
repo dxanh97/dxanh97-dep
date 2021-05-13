@@ -30,8 +30,8 @@ const ThemeButton = styled.button`
   font-family: 'YesevaOne';
   font-weight: bold;
   padding: 2px 4px;
-  color: ${(props: ThemeButtonProps) => props.themeSet.paper};
-  background: ${(props: ThemeButtonProps) => props.themeSet.text};
+  color: ${(props: ThemeButtonProps) => props.themeSet.text};
+  background: ${(props: ThemeButtonProps) => props.themeSet.paper};
   ${(props: ThemeButtonProps) =>
     props.selected &&
     css`
@@ -47,7 +47,7 @@ interface Props {
 }
 
 const ThemePicker: React.FC<Props> = ({ onSelect }) => {
-  const [selected, setSelected] = useState(themes.lila);
+  const [selected, setSelected] = useState(Object.values(themes)[0]);
   useEffect(() => {
     onSelect(selected);
   }, [selected]);

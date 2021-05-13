@@ -3,21 +3,21 @@ import { Theme } from '@dxanh97/models';
 const themes: {
   [themeName: string]: Theme;
 } = {
-  luxi: {
+  lux: {
     key: 1,
     topBar: '#f2e7ca',
     backdrop: '#f9f1e1',
     paper: '#fef8ec',
     text: '#005661',
   },
-  lila: {
+  lilac: {
     key: 2,
     topBar: '#dedbf5',
     backdrop: '#edecf8',
     paper: '#f2f1f8',
     text: '#0c006b',
   },
-  mach: {
+  machine: {
     key: 3,
     topBar: '#161b1e',
     backdrop: '#1d2528',
