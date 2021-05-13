@@ -27,9 +27,7 @@ const Wrapper = styled.div`
     flex-wrap: wrap;
     margin-top: 16px;
     & > span.badge {
-      border: 1px solid #005661;
       border: 1px solid ${(props) => props.theme.text};
-      transition: 0.05s ease;
       border-radius: 4px;
       padding: 4px 8px;
       margin: 0 4px 4px 0;

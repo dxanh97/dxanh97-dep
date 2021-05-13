@@ -22,7 +22,6 @@ const Wrapper = styled.div`
   display: flex;
   background: ${(props) => props.theme.backdrop};
   color: ${(props) => props.theme.text};
-  transition: 0.05s ease;
 `;
 
 const Paper = styled.div`
@@ -33,7 +32,6 @@ const Paper = styled.div`
   border: 1px solid ${(props) => props.theme.text};
   border-radius: 8px;
   background: ${(props) => props.theme.paper};
-  transition: 0.05s ease;
   text-transform: lowercase;
   display: flex;
   flex-direction: row;

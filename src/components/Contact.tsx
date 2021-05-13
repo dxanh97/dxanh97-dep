@@ -30,7 +30,6 @@ const Wrapper = styled.div`
         text-decoration: underline 1px;
         color: #005661;
         color: ${(props) => props.theme.text};
-        transition: 0.05s ease;
       }
     }
   }

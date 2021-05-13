@@ -20,7 +20,6 @@ const ThemeButton = styled.button`
   border-radius: 4px;
   border: 1px solid;
   border-color: ${(props: { themeSet: Theme }) => props.themeSet.text};
-  transition: 0.05s ease;
   cursor: pointer;
   & > div {
     padding: 4px 0;
@@ -30,7 +29,6 @@ const ThemeButton = styled.button`
     color: ${(props: { themeSet: Theme }) => props.themeSet.text};
     background: ${(props: { themeSet: Theme }) => props.themeSet.paper};
     border-color: ${(props: { themeSet: Theme }) => props.themeSet.text};
-    transition: 0.05s ease;
     ${down('md')} {
       font-size: 10px;
     }
