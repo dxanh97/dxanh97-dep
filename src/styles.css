@@ -16,6 +16,10 @@
   src: url('./assets/fonts/Newsreader-Regular.ttf');
   font-weight: bold;
 }
+@font-face {
+  font-family: 'FrederickatheGreat';
+  src: url('./assets/fonts/FrederickatheGreat-Regular.ttf');
+}
 
 * {
   font-family: 'Newsreader';
