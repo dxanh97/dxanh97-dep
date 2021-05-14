@@ -9,7 +9,7 @@ import {
   TechStacks,
   Hobbies,
 } from '@dxanh97/components/portfolio';
-import { Layout } from '@dxanh97/components';
+import { Layout } from '@dxanh97/components/common';
 
 import '../styles.css';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Layout } from '@dxanh97/components';
+import { Layout } from '@dxanh97/components/common';
 import { Card } from '@dxanh97/components/video-poker';
 import { VideoPoker } from '@dxanh97/constants';
 
