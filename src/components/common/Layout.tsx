@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 const TopBar = styled.div`
   position: relative;
   background: ${(props) => props.theme.topBar};
-  height: 36px;
+  height: 32px;
 `;
 
 const Layout: React.FC = ({ children }) => {

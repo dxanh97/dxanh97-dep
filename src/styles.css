@@ -3,17 +3,13 @@
   src: url('./assets/fonts/YesevaOne-Regular.ttf');
 }
 @font-face {
-  font-family: 'LoraItalic';
-  src: url('./assets/fonts/Lora-BoldItalic.ttf');
-}
-@font-face {
   font-family: 'Newsreader';
-  src: url('./assets/fonts/Newsreader-ExtraLight.ttf');
+  src: url('./assets/fonts/Newsreader-Light.ttf');
   font-weight: normal;
 }
 @font-face {
   font-family: 'Newsreader';
-  src: url('./assets/fonts/Newsreader-Regular.ttf');
+  src: url('./assets/fonts/Newsreader-Medium.ttf');
   font-weight: bold;
 }
 @font-face {

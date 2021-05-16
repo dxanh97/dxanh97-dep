@@ -27,7 +27,6 @@ const ThemeButton = styled.button`
   border: none;
   cursor: pointer;
   font-size: 16px;
-  font-family: 'YesevaOne';
   font-weight: bold;
   padding: 2px 4px;
   color: ${(props: ThemeButtonProps) => props.themeSet.text};
