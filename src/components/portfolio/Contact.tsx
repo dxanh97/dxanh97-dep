@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { down } from 'styled-breakpoints';
 import { IoCall, IoMail, IoLogoLinkedin, IoLogoGithub } from 'react-icons/io5';
-import { SectionHeader } from '.';
+
+import SectionHeader from './SectionHeader';
 
 const Wrapper = styled.div`
   padding: 16px;

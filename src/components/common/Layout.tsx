@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import styled, { ThemeProvider } from 'styled-components';
-import { themes } from '@dxanh97/constants';
-import { Theme } from '@dxanh97/models';
 
+import { themes } from '../../constants/index';
+import { Theme } from '../../models/index';
 import Container from './Container';
 import ThemePicker from './ThemePicker';
 

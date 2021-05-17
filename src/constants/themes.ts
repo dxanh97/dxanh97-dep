@@ -1,4 +1,4 @@
-import { Theme } from '@dxanh97/models';
+import { Theme } from '../models';
 
 const themes: {
   [themeName: string]: Theme;

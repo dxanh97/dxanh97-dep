@@ -8,8 +8,8 @@ import {
   WorkExperiences,
   TechStacks,
   Hobbies,
-} from '@dxanh97/components/portfolio';
-import { Layout } from '@dxanh97/components/common';
+} from '../components/portfolio';
+import { Layout } from '../components/common';
 
 import '../styles.css';
 

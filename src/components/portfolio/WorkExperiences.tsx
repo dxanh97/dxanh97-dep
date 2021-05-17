@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { SectionHeader } from '.';
+import SectionHeader from './SectionHeader';
 
 const Wrapper = styled.div`
   padding: 16px;

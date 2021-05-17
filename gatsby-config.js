@@ -9,13 +9,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-alias-imports',
       options: {
-        alias: {
-          '@dxanh97/components': 'src/components',
-          '@dxanh97/components/*': 'src/components/*',
-          '@dxanh97/constants': 'src/constants',
-          '@dxanh97/models': 'src/models',
-          '@dxanh97/utils': 'src/utils',
-        },
+        alias: {},
         extensions: [],
       },
     },

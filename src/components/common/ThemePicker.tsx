@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 
-import { Theme } from '@dxanh97/models';
-import { themes } from '@dxanh97/constants';
+import { Theme } from '../../models';
+import { themes } from '../../constants';
 
 const Wrapper = styled.div`
   position: absolute;

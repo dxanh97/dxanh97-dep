@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { VideoPoker } from '@dxanh97/constants';
+import { CardValue } from '../../models/video-poker';
 
 const Wrapper = styled.div`
   position: relative;
@@ -26,11 +26,11 @@ const Wrapper = styled.div`
 `;
 
 interface Props {
-  cardNumber: VideoPoker.CardNumber;
+  cardNumber: CardValue;
 }
 
-const getCardFace = (cardNumber: VideoPoker.CardNumber): string => {
-  const { ACE, KING, QUEEN, JACK } = VideoPoker.CardNumber;
+const getCardFace = (cardNumber: CardValue): string => {
+  const { ACE, KING, QUEEN, JACK } = CardValue;
   if (cardNumber === ACE) return 'A';
   if (cardNumber === KING) return 'K';
   if (cardNumber === QUEEN) return 'Q';

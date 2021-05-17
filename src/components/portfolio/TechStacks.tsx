@@ -17,7 +17,7 @@ import {
   SiVim,
 } from 'react-icons/si';
 
-import { SectionHeader } from '.';
+import SectionHeader from './SectionHeader';
 
 const Wrapper = styled.div`
   padding: 16px;
