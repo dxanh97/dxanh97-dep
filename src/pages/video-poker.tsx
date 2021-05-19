@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { Layout } from '../components/common';
-import { Card } from '../components/video-poker';
-import { CardDeck } from '../constants/video-poker';
+import { Card as CardComp } from '../components/video-poker';
+import { Card } from '../models/video-poker';
+import { randomCards } from '../utils/video-poker';
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,39 +14,53 @@ const Wrapper = styled.div`
 `;
 
 const VideoPokerPage: React.FC = () => {
-  const [red, setRed] = useState('#DC143C');
-  const [black, setBlack] = useState('');
+  const [red] = useState('#DC143C');
+  const [black] = useState('');
+
+  const [cards, setCards] = useState<Card[]>([]);
+  const [savedCards, setSavedCards] = useState<Card[]>([]);
+
+  const random = useCallback(() => {
+    setCards(randomCards(savedCards));
+    setSavedCards([]);
+  }, [savedCards]);
+
+  useEffect(() => random(), []);
+
   return (
     <Layout>
-      <label>
-        <span>Red</span>
-        <br />
-        <input value={red} onChange={(e) => setRed(e.target.value)} />
-      </label>
-      <br />
-      <br />
-      <label>
-        <span>Black</span>
-        <br />
-        <input value={black} onChange={(e) => setBlack(e.target.value)} />
-      </label>
-      <br />
-      <br />
       <Wrapper>
-        {[1, 2, 3, 4].map((num) => (
-          <div key={num}>
-            {CardDeck.slice(13 * num - 13, 13 * num - 1).map((card) => (
-              <Card
-                key={card.displayText}
+        {cards.map((card) => {
+          const isSaved = savedCards.find(
+            (c) => c.suit === card.suit && c.value === card.value,
+          );
+          return (
+            <div
+              key={card.displayText}
+              onClick={() => {
+                if (!isSaved) {
+                  setSavedCards((scs) => [...scs.slice(0, 4), card]);
+                } else {
+                  setSavedCards((scs) =>
+                    scs.filter(
+                      (c) => c.suit === card.suit && c.value === card.value,
+                    ),
+                  );
+                }
+              }}
+            >
+              {isSaved && '✅'}
+              <CardComp
                 displayText={card.displayText}
                 suit={card.suit}
                 red={red}
                 black={black}
               />
-            ))}
-          </div>
-        ))}
+            </div>
+          );
+        })}
       </Wrapper>
+      <button onClick={() => random()}>🎲</button>
     </Layout>
   );
 };

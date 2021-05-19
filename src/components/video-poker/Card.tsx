@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   color: ${(props) => props.theme.text};
   color: ${(props: WrapperProps) => props.red && props.red};
   color: ${(props: WrapperProps) => props.black && props.black};
+  cursor: pointer;
 `;
 
 interface Props {
