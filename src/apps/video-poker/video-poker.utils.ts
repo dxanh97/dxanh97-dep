@@ -1,7 +1,7 @@
 import { shuffle, differenceWith, isEqual } from 'lodash';
 
-import { Card } from '../models/video-poker';
-import { CardDeck } from '../constants/video-poker';
+import { Card } from './video-poker.models';
+import { CardDeck } from './video-poker.constants';
 
 const randomCards = (savedCards: Card[]) => {
   const remainingDeck = differenceWith(CardDeck, savedCards, isEqual);

@@ -1,4 +1,4 @@
-import { Card, CardSuit, CardValue } from '../models/video-poker';
+import { Card, CardSuit, CardValue } from './video-poker.models';
 
 const { HEART, DIAMOND, SPADE, CLUB } = CardSuit;
 // prettier-ignore
