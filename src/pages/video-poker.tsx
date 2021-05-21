@@ -21,9 +21,24 @@ const VideoPokerPage: React.FC = () => {
   const [savedCards, setSavedCards] = useState<Card[]>([]);
 
   const random = useCallback(() => {
-    setCards(randomCards(savedCards));
-    setSavedCards([]);
-  }, [savedCards]);
+    const newRandomCards = randomCards(savedCards);
+    if (cards.length === 0) {
+      setCards(newRandomCards);
+    } else {
+      let index = 0;
+      const newCards = cards.map((card) => {
+        const isSaved = savedCards.find(
+          (savedCard) =>
+            savedCard.suit === card.suit && savedCard.value === card.value,
+        );
+        if (isSaved) return card;
+        index += 1;
+        return newRandomCards[index - 1];
+      });
+      setCards(newCards);
+      setSavedCards([]);
+    }
+  }, [cards, savedCards]);
 
   useEffect(() => random(), []);
 
