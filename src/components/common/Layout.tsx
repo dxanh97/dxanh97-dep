@@ -7,6 +7,8 @@ import { Theme } from '../../models/index';
 import Container from './Container';
 import ThemePicker from './ThemePicker';
 
+import '../../styles.css';
+
 const Wrapper = styled.div`
   display: flex;
   min-height: calc(100vh - 32px);
