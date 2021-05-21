@@ -9,7 +9,7 @@ import ThemePicker from './ThemePicker';
 
 const Wrapper = styled.div`
   display: flex;
-  min-height: calc(100vh - 36px);
+  min-height: calc(100vh - 32px);
   background: ${(props) => props.theme.backdrop};
   color: ${(props) => props.theme.text};
 `;
