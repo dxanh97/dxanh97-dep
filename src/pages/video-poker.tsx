@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Layout } from '../components/common';
 import { Card as CardComp } from '../components/video-poker';
 import { Card } from '../models/video-poker';
+import { CardBack } from '../constants/video-poker';
 import { randomCards } from '../utils/video-poker';
 
 const Wrapper = styled.div`
@@ -40,12 +41,18 @@ const VideoPokerPage: React.FC = () => {
     }
   }, [cards, savedCards]);
 
-  useEffect(() => random(), []);
-
   return (
     <Layout>
       <Wrapper>
-        {cards.map((card) => {
+        {[1, 1, 1, 1, 1].map((_, i) => {
+          const card = cards[i];
+          if (!card) {
+            return (
+              <div key={i}>
+                <CardComp displayText={CardBack.displayText} />
+              </div>
+            );
+          }
           const isSaved = savedCards.find(
             (c) => c.suit === card.suit && c.value === card.value,
           );
@@ -75,7 +82,7 @@ const VideoPokerPage: React.FC = () => {
           );
         })}
       </Wrapper>
-      <button onClick={() => random()}>🎲</button>
+      <button onClick={() => random()}>🎲 Deal</button>
     </Layout>
   );
 };
