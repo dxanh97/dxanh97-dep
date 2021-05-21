@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { CardSuit } from '../../models/video-poker';
+import { CardSuit } from '../video-poker.models';
 
 interface WrapperProps {
   red?: string;
