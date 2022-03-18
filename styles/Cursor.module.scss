@@ -1,0 +1,15 @@
+@import 'variables';
+
+.cursor-wrapper {
+  pointer-events: none;
+}
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  mix-blend-mode: exclusion;
+  z-index: 1000;
+  circle {
+    fill: $color-background;
+  }
+}

@@ -29,6 +29,7 @@ import {
 } from 'react-icons/ri';
 
 import css from '../styles/index.module.scss';
+import Cursor from '../components/Cursor';
 
 const contactList = [
   { href: 'mailto:dxanh97@gmail.com', icon: <FiMail /> },
@@ -195,36 +196,39 @@ const experiencesNode = (
 );
 
 const Home: NextPage = () => (
-  <div className={css['wrapper']}>
-    <Head>
-      <title>{`<dxanh97 />`}</title>
-    </Head>
-    <div className={css['top-section']}>{topSectionNode}</div>
-    <div className={css['information-wrapper']}>
-      <div>
-        <div className={css['information-section']}>
-          <h3>About</h3>
-          <span className={css['justify']}>
-            A self-learning, open-minded software engineer. Expertise in
-            JavaScript/TypeScript with over 3 years of experience. Software
-            developing is a craft and I&apos;m aiming to be a better craftsman
-            each day.
-          </span>
-        </div>
-        <div className={css['information-section']}>
-          <h3>Tech</h3>
-          {techNode}
-        </div>
+  <div className={css['scroll-wrapper']}>
+    <div className={css['wrapper']}>
+      <Head>
+        <title>{`<dxanh97 />`}</title>
+      </Head>
+      <Cursor />
+      <div className={css['top-section']}>{topSectionNode}</div>
+      <div className={css['information-wrapper']}>
+        <div>
+          <div className={css['information-section']}>
+            <h3>About</h3>
+            <span className={css['justify']}>
+              A self-learning, open-minded software engineer. Expertise in
+              JavaScript/TypeScript with over 3 years of experience. Software
+              developing is a craft and I&apos;m aiming to be a better craftsman
+              each day.
+            </span>
+          </div>
+          <div className={css['information-section']}>
+            <h3>Tech</h3>
+            {techNode}
+          </div>
 
-        <div className={css['information-section']}>
-          <h3>Interests</h3>
-          {interestsNode}
+          <div className={css['information-section']}>
+            <h3>Interests</h3>
+            {interestsNode}
+          </div>
         </div>
-      </div>
-      <div>
-        <div className={css['information-section']}>
-          <h3>Experiences</h3>
-          {experiencesNode}
+        <div>
+          <div className={css['information-section']}>
+            <h3>Experiences</h3>
+            {experiencesNode}
+          </div>
         </div>
       </div>
     </div>
