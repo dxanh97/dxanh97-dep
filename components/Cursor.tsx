@@ -3,7 +3,11 @@ import { gsap } from 'gsap';
 
 import css from '../styles/Cursor.module.scss';
 
-const Cursor: React.FC = () => {
+interface Props {
+  $hoverables: React.RefObject<HTMLAnchorElement>[];
+}
+
+const Cursor: React.FC<Props> = ({ $hoverables }) => {
   const $bigCursor = useRef<HTMLDivElement>(null);
   const $smallCursor = useRef<HTMLDivElement>(null);
   const isMouseOnScreen = useRef(false);
@@ -35,6 +39,19 @@ const Cursor: React.FC = () => {
         $bigCursor.current.style.opacity = '0';
         $smallCursor.current.style.opacity = '0';
       }
+    });
+
+    $hoverables.forEach(($hoverable) => {
+      $hoverable.current?.addEventListener('mouseenter', () => {
+        gsap.to($bigCursor.current, 0.2, {
+          scale: 3,
+        });
+      });
+      $hoverable.current?.addEventListener('mouseleave', () => {
+        gsap.to($bigCursor.current, 0.2, {
+          scale: 1,
+        });
+      });
     });
   }, []);
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { RefObject, useRef } from 'react';
 import Head from 'next/head';
 import type { NextPage } from 'next';
 import { FiGithub, FiMail, FiLinkedin } from 'react-icons/fi';
@@ -31,13 +31,31 @@ import {
 import css from '../styles/index.module.scss';
 import Cursor from '../components/Cursor';
 
-const contactList = [
-  { href: 'mailto:dxanh97@gmail.com', icon: <FiMail /> },
-  { href: 'https://github.com/dxanh97', icon: <FiGithub /> },
-  { href: 'https://www.linkedin.com/in/dxanh97', icon: <FiLinkedin /> },
+interface ContactRefs {
+  $mail: RefObject<HTMLAnchorElement>;
+  $github: RefObject<HTMLAnchorElement>;
+  $linkedin: RefObject<HTMLAnchorElement>;
+}
+
+const contactList = (refs: ContactRefs) => [
+  {
+    href: 'mailto:dxanh97@gmail.com',
+    icon: <FiMail />,
+    ref: refs.$mail,
+  },
+  {
+    href: 'https://github.com/dxanh97',
+    icon: <FiGithub />,
+    ref: refs.$github,
+  },
+  {
+    href: 'https://www.linkedin.com/in/dxanh97',
+    icon: <FiLinkedin />,
+    ref: refs.$linkedin,
+  },
 ];
 
-const topSectionNode = (
+const topSectionNode = (refs: ContactRefs) => (
   <>
     <h1 className={css['header']}>
       Đặng
@@ -50,9 +68,10 @@ const topSectionNode = (
       <span>Software Engineer</span>
     </div>
     <div className={css['contact-wrapper']}>
-      {contactList.map((contact) => (
+      {contactList(refs).map((contact) => (
         <a
           key={contact.href}
+          ref={contact.ref}
           target="_blank"
           rel="noreferrer"
           href={contact.href}
@@ -115,11 +134,18 @@ const interestsNode = (
   </div>
 );
 
-const experienceList = [
+interface ExperienceRefs {
+  $hisoft: RefObject<HTMLAnchorElement>;
+  $bakco: RefObject<HTMLAnchorElement>;
+  $codelink: RefObject<HTMLAnchorElement>;
+}
+
+const experienceList = (refs: ExperienceRefs) => [
   {
     role: 'Full-Stack Developer',
     company: 'HiSoft',
     companyURL: 'https://www.facebook.com/hisoftcompany/',
+    ref: refs.$hisoft,
     period: 'Mar 2017 — Sep 2017',
     details: (
       <p>
@@ -135,6 +161,7 @@ const experienceList = [
     role: 'Full-Stack Developer',
     company: 'Bakco',
     companyURL: 'https://www.bakco.com.vn/',
+    ref: refs.$bakco,
     period: 'Nov 2017 — July 2018 & July 2019 — sep 2020',
     details: (
       <>
@@ -157,6 +184,7 @@ const experienceList = [
     role: 'Full-Stack Developer',
     company: 'CodeLink',
     companyURL: 'https://www.codelink.io/',
+    ref: refs.$codelink,
     period: 'Oct 2020 — Present',
     details: (
       <>
@@ -175,15 +203,20 @@ const experienceList = [
   },
 ];
 
-const experiencesNode = (
+const experiencesNode = (refs: ExperienceRefs) => (
   <div className={css['experiences-wrapper']}>
-    {experienceList.map((experience) => (
+    {experienceList(refs).map((experience) => (
       <div key={experience.period} className={css['experience']}>
         <p className={css['company-role']}>
           <b>{experience.role}</b>
           &nbsp;at&nbsp;
           <b>
-            <a href={experience.companyURL} target="_blank" rel="noreferrer">
+            <a
+              ref={experience.ref}
+              href={experience.companyURL}
+              target="_blank"
+              rel="noreferrer"
+            >
               {experience.company}
             </a>
           </b>
@@ -195,44 +228,58 @@ const experiencesNode = (
   </div>
 );
 
-const Home: NextPage = () => (
-  <div className={css['scroll-wrapper']}>
-    <div className={css['wrapper']}>
-      <Head>
-        <title>{`<dxanh97 />`}</title>
-      </Head>
-      <Cursor />
-      <div className={css['top-section']}>{topSectionNode}</div>
-      <div className={css['information-wrapper']}>
-        <div>
-          <div className={css['information-section']}>
-            <h3>About</h3>
-            <span className={css['justify']}>
-              A self-learning, open-minded software engineer. Expertise in
-              JavaScript/TypeScript with over 3 years of experience. Software
-              developing is a craft and I&apos;m aiming to be a better craftsman
-              each day.
-            </span>
-          </div>
-          <div className={css['information-section']}>
-            <h3>Tech</h3>
-            {techNode}
-          </div>
+const Home: NextPage = () => {
+  const $mail = useRef<HTMLAnchorElement>(null);
+  const $github = useRef<HTMLAnchorElement>(null);
+  const $linkedin = useRef<HTMLAnchorElement>(null);
 
-          <div className={css['information-section']}>
-            <h3>Interests</h3>
-            {interestsNode}
-          </div>
+  const $hisoft = useRef<HTMLAnchorElement>(null);
+  const $bakco = useRef<HTMLAnchorElement>(null);
+  const $codelink = useRef<HTMLAnchorElement>(null);
+
+  return (
+    <div className={css['scroll-wrapper']}>
+      <div className={css['wrapper']}>
+        <Head>
+          <title>{`<dxanh97 />`}</title>
+        </Head>
+        <Cursor
+          $hoverables={[$mail, $github, $linkedin, $hisoft, $bakco, $codelink]}
+        />
+        <div className={css['top-section']}>
+          {topSectionNode({ $mail, $github, $linkedin })}
         </div>
-        <div>
-          <div className={css['information-section']}>
-            <h3>Experiences</h3>
-            {experiencesNode}
+        <div className={css['information-wrapper']}>
+          <div>
+            <div className={css['information-section']}>
+              <h3>About</h3>
+              <span className={css['justify']}>
+                A self-learning, open-minded software engineer. Expertise in
+                JavaScript/TypeScript with over 3 years of experience. Software
+                developing is a craft and I&apos;m aiming to be a better
+                craftsman each day.
+              </span>
+            </div>
+            <div className={css['information-section']}>
+              <h3>Tech</h3>
+              {techNode}
+            </div>
+
+            <div className={css['information-section']}>
+              <h3>Interests</h3>
+              {interestsNode}
+            </div>
+          </div>
+          <div>
+            <div className={css['information-section']}>
+              <h3>Experiences</h3>
+              {experiencesNode({ $hisoft, $bakco, $codelink })}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Home;
