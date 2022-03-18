@@ -10,6 +10,10 @@ import ExperienceSection from '../components/ExperienceSection';
 
 import css from '../styles/index.module.scss';
 
+const aboutMe = (years: number) => {
+  return `A self-learning, open-minded software engineer. Expertise in JavaScript/TypeScript with over ${years} years of experience. Software development is truly a craft and I aim to be a better craftsman on each passing day.`;
+};
+
 const Home: NextPage = () => {
   const $mail = useRef<HTMLAnchorElement>(null);
   const $github = useRef<HTMLAnchorElement>(null);
@@ -36,10 +40,7 @@ const Home: NextPage = () => {
             <div className={css['information-section']}>
               <h3>About</h3>
               <span className={css['justify']}>
-                A self-learning, open-minded software engineer. Expertise in
-                JavaScript/TypeScript with over 3 years of experience. Software
-                developing is a craft and I&apos;m aiming to be a better
-                craftsman each day.
+                {aboutMe(new Date().getFullYear() - 2018)}
               </span>
             </div>
             <div className={css['information-section']}>
