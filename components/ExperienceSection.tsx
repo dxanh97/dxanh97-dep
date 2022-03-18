@@ -14,14 +14,14 @@ const experienceList = (refs: ExperienceRefs) => [
     company: 'HiSoft',
     companyURL: 'https://www.facebook.com/hisoftcompany/',
     ref: refs.$hisoft,
-    period: 'Mar 2017 — Sep 2017',
+    period: 'March 2017 — September 2017',
+    // prettier-ignore
     details: (
       <p>
-        Maintain and develop new features for&nbsp;
-        <b>QTSC OMS (Quang Trung Software City Operations Management Suite)</b>
-        &nbsp;mobile app to minimize the amount of paper work and procedure
-        for&nbsp;
-        <b>QTSC</b>.
+        Maintained and developed new features
+        for <b>QTSC OMS (Quang Trung Software City Operations Management Suite)</b> mobile
+        app to minimize the amount of paperwork and procedure
+        for <b>QTSC</b>.
       </p>
     ),
   },
@@ -30,20 +30,21 @@ const experienceList = (refs: ExperienceRefs) => [
     company: 'Bakco',
     companyURL: 'https://www.bakco.com.vn/',
     ref: refs.$bakco,
-    period: 'Nov 2017 — July 2018 & July 2019 — sep 2020',
+    period: 'November 2017 — July 2018 & July 2019 — September 2020',
+    // prettier-ignore
     details: (
       <>
         <p>
-          Responsible for developing <b>Hospital Management</b> module to help
-          hospitals easily manage their own internal resources and connect with
-          others using one platform.
+          Was responsible for developing <b>Hospital Management</b> module to help
+          hospitals easily manage their internal resources and connect with
+          others using only one platform.
         </p>
         <p>
-          Lead Front-End team of 2 to develop several apps like:
-          <br />• <b>PHR (Personal Health Record)</b> letting user to track
-          their medical records and body indexes
-          <br />• <b>CDS (Control Disease System)</b> for <b>HCDC</b> to record
-          and manage the covid-19 infection chains in hcm city.
+          Led Front-End team of 2 to develop several apps like:
+          <br />• <b>PHR (Personal Health Record)</b> that let users track their
+          medical records and body indexes.
+          <br />• <b>CDS (Control Disease System)</b> for <b>HCDC (HCMC Center for
+          Disease Control)</b> to record and manage the Covid-19 infection chains in HCM city.
         </p>
       </>
     ),
@@ -53,18 +54,27 @@ const experienceList = (refs: ExperienceRefs) => [
     company: 'CodeLink',
     companyURL: 'https://www.codelink.io/',
     ref: refs.$codelink,
-    period: 'Oct 2020 — Present',
+    period: 'October 2020 — Present',
+    // prettier-ignore
     details: (
       <>
         <p>
-          Update the company&apos;s website and add a CI config to build
-          automatically using <b>CircleCI</b>
+          Updated the company&apos;s website and add a CI config to build
+          bundles automatically using <b>CircleCI</b>. Integrate
+          with <b>Google Analytics</b> dashboards to set up all tracking
+          flows for the website. Used <b>Strapi</b> to set up a headless CMS
+          for managing CodeLink&apos;s Playbook.
         </p>
         <p>
-          Outsourcing for <b>Electronic Arts</b> to help build an application
-          that manage marketing assets (videos, images, ...) and use{' '}
-          <b>Machine Learning</b> and <b>Serverless</b> to create audience
-          targeted marketing videos
+          Outsourced for <b>Electronic Arts</b> to help build an admin dashboard
+          that manages marketing assets (videos, images, ...)
+          and use <b>Machine Learning</b>, <b>Serverless</b>, and <b>NestJS</b> to
+          create audience-targeted marketing videos.
+        </p>
+        <p>
+          Used <b>React</b>, <b>Redux</b>, <b>Firebase</b>, and <b>GitHub Actions</b> to
+          create an annotation tool for preparing audio data for
+          a <b>Machine Learning</b> model to produce a <b>Text-to-Speech</b> service.
         </p>
       </>
     ),
