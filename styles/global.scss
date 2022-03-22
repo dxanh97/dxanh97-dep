@@ -5,5 +5,9 @@ body {
   background: $color-background;
   * {
     cursor: none;
+    color: $color-primary;
+    font-family: Lekton;
+    font-size: 20px;
+    line-height: 24px;
   }
 }

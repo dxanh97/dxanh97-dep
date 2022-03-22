@@ -8,7 +8,7 @@ import {
   RiYoutubeLine,
 } from 'react-icons/ri';
 
-import css from '../styles/index.module.scss';
+import css from '../styles/InterestSection.module.scss';
 
 const interestList = [
   { name: 'Football', icon: <RiFootballLine /> },

@@ -1,6 +1,6 @@
 import React, { RefObject } from 'react';
 
-import css from '../styles/index.module.scss';
+import css from '../styles/ExperienceSection.module.scss';
 
 interface ExperienceRefs {
   $hisoft: RefObject<HTMLAnchorElement>;

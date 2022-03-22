@@ -1,7 +1,7 @@
 import { RefObject } from 'react';
 import { FiGithub, FiMail, FiLinkedin } from 'react-icons/fi';
 
-import css from '../styles/index.module.scss';
+import css from '../styles/TopSection.module.scss';
 
 interface ContactRefs {
   $mail: RefObject<HTMLAnchorElement>;

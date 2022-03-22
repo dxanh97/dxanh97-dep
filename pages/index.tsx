@@ -39,9 +39,7 @@ const Home: NextPage = () => {
           <div>
             <div className={css['information-section']}>
               <h3>About</h3>
-              <span className={css['justify']}>
-                {aboutMe(new Date().getFullYear() - 2018)}
-              </span>
+              <span>{aboutMe(new Date().getFullYear() - 2018)}</span>
             </div>
             <div className={css['information-section']}>
               <h3>Tech</h3>

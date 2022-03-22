@@ -1,0 +1,16 @@
+@import 'variables';
+
+.experiences-wrapper {
+  .experience {
+    margin-bottom: 40px;
+    p {
+      margin: 16px 0;
+    }
+    .company-role {
+      margin-bottom: 8px;
+    }
+    span {
+      color: $color-caption;
+    }
+  }
+}

@@ -17,7 +17,7 @@ import {
   SiVim,
 } from 'react-icons/si';
 
-import css from '../styles/index.module.scss';
+import css from '../styles/TechSection.module.scss';
 
 const techList = [
   { name: 'JavaScript', icon: <SiJavascript /> },
