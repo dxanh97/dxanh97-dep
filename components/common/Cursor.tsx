@@ -11,7 +11,7 @@ const CursorWrapper = styled.div`
     mix-blend-mode: exclusion;
     z-index: 1000;
     circle {
-      fill: ${(props) => props.theme.primary};
+      fill: ${(props) => props.theme.background};
     }
   }
 `;
