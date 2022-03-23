@@ -1,8 +1,6 @@
 import React, { RefObject } from 'react';
 import styled from 'styled-components';
 
-import Theme from '../../constants/theme';
-
 const Wrapper = styled.div`
   margin-bottom: 40px;
 `;
@@ -10,7 +8,7 @@ const CompanyRole = styled.p`
   margin-bottom: 8px;
 `;
 const Period = styled.span`
-  color: ${Theme.Caption};
+  color: ${(props) => props.theme.caption};
 `;
 const DetailSection = styled.p`
   margin: 16px 0;

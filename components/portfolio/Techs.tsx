@@ -18,13 +18,11 @@ import {
 } from 'react-icons/si';
 import styled from 'styled-components';
 
-import Theme from '../../constants/theme';
-
 const Tag = styled.div`
   display: inline-block;
   padding: 2px 8px;
   border-radius: 4px;
-  border: 1px solid ${Theme.Primary};
+  border: 1px solid ${(props) => props.theme.primary};
   margin-right: 8px;
   margin-bottom: 8px;
   & > div {

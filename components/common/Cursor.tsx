@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import styled from 'styled-components';
 
-import Theme from '../../constants/theme';
-
 const CursorWrapper = styled.div`
   pointer-events: none;
   .cursor {
@@ -13,7 +11,7 @@ const CursorWrapper = styled.div`
     mix-blend-mode: exclusion;
     z-index: 1000;
     circle {
-      fill: ${Theme.Background};
+      fill: ${(props) => props.theme.primary};
     }
   }
 `;

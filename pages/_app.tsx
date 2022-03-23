@@ -1,14 +1,19 @@
 import type { AppProps } from 'next/app';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 
-import Theme from '../constants/theme';
+const theme = {
+  primary: '#271297',
+  background: '#edecf8',
+  white: '#ffffff',
+  caption: '#9791c2',
+};
 
 const Layout = styled.body`
   margin: -10px;
-  background: ${Theme.Background};
+  background: ${(props) => props.theme.background};
   * {
     cursor: none;
-    color: ${Theme.Primary};
+    color: ${(props) => props.theme.primary};
     font-family: Lekton;
     font-size: 20px;
     line-height: 24px;
@@ -17,9 +22,11 @@ const Layout = styled.body`
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
   );
 };
 

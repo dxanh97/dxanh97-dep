@@ -2,12 +2,10 @@ import { RefObject } from 'react';
 import { FiGithub, FiMail, FiLinkedin } from 'react-icons/fi';
 import styled from 'styled-components';
 
-import Theme from '../../constants/theme';
-
 const Wrapper = styled.div`
   text-align: right;
   padding-right: 20px;
-  border-right: 4px solid ${Theme.Primary};
+  border-right: 4px solid ${(props) => props.theme.primary};
 `;
 const Name = styled.h1`
   text-transform: uppercase;
@@ -24,8 +22,8 @@ const Title = styled.div`
   span {
     padding: 4px 8px;
     letter-spacing: 2px;
-    background: ${Theme.Primary};
-    color: ${Theme.White};
+    background: ${(props) => props.theme.primary};
+    color: ${(props) => props.theme.white};
   }
 `;
 const ContactWrapper = styled.div`
