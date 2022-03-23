@@ -1,14 +1,39 @@
 import React, { useRef } from 'react';
 import Head from 'next/head';
 import type { NextPage } from 'next';
+import styled from 'styled-components';
 
-import Cursor from '../components/Cursor';
-import TopSection from '../components/TopSection';
-import TechSection from '../components/TechSection';
-import InterestSection from '../components/InterestSection';
-import ExperienceSection from '../components/ExperienceSection';
+import Cursor from '../components/common/Cursor';
 
-import css from '../styles/index.module.scss';
+import InformationSection from '../components/portfolio/InformationSection';
+import NameAndTitle from '../components/portfolio/NameAndTitle';
+import Techs from '../components/portfolio/Techs';
+import Interests from '../components/portfolio/Interests';
+import Experiences from '../components/portfolio/Experiences';
+
+const ScrollWrapper = styled.div`
+  height: 100vh;
+  overflow: auto;
+`;
+const Wrapper = styled.div`
+  margin: auto;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  @media (min-width: 1000px) {
+    max-width: 1000px;
+  }
+`;
+const InformationWrapper = styled.div`
+  display: flex;
+  & > div:first-child {
+    width: 35%;
+    padding-right: 16px;
+  }
+  & > div:last-child {
+    flex: 1;
+    padding-left: 16px;
+  }
+`;
 
 const aboutMe = (years: number) => {
   return `A self-learning, open-minded software engineer. Expertise in JavaScript/TypeScript with over ${years} years of experience. Software development is truly a craft and I aim to be a better craftsman on each passing day.`;
@@ -24,42 +49,33 @@ const Home: NextPage = () => {
   const $codelink = useRef<HTMLAnchorElement>(null);
 
   return (
-    <div className={css['scroll-wrapper']}>
-      <div className={css['wrapper']}>
+    <ScrollWrapper>
+      <Wrapper>
         <Head>
           <title>{`<dxanh97 />`}</title>
         </Head>
         <Cursor
           $hoverables={[$mail, $github, $linkedin, $hisoft, $bakco, $codelink]}
         />
-        <div className={css['top-section']}>
-          {TopSection({ $mail, $github, $linkedin })}
-        </div>
-        <div className={css['information-wrapper']}>
+        {NameAndTitle({ $mail, $github, $linkedin })}
+        <InformationWrapper>
           <div>
-            <div className={css['information-section']}>
-              <h3>About</h3>
-              <span>{aboutMe(new Date().getFullYear() - 2018)}</span>
-            </div>
-            <div className={css['information-section']}>
-              <h3>Tech</h3>
-              {TechSection}
-            </div>
-
-            <div className={css['information-section']}>
-              <h3>Interests</h3>
-              {InterestSection}
-            </div>
+            <InformationSection
+              header="About"
+              content={aboutMe(new Date().getFullYear() - 2018)}
+            />
+            <InformationSection header="Tech" content={Techs} />
+            <InformationSection header="Interests" content={Interests} />
           </div>
           <div>
-            <div className={css['information-section']}>
-              <h3>Experiences</h3>
-              {ExperienceSection({ $hisoft, $bakco, $codelink })}
-            </div>
+            <InformationSection
+              header="Experiences"
+              content={Experiences({ $hisoft, $bakco, $codelink })}
+            />
           </div>
-        </div>
-      </div>
-    </div>
+        </InformationWrapper>
+      </Wrapper>
+    </ScrollWrapper>
   );
 };
 

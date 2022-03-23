@@ -16,8 +16,26 @@ import {
   SiTypescript,
   SiVim,
 } from 'react-icons/si';
+import styled from 'styled-components';
 
-import css from '../styles/TechSection.module.scss';
+import Theme from '../../constants/theme';
+
+const Tag = styled.div`
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid ${Theme.Primary};
+  margin-right: 8px;
+  margin-bottom: 8px;
+  & > div {
+    display: flex;
+    align-items: center;
+    svg {
+      margin-right: 4px;
+      font-size: 16px;
+    }
+  }
+`;
 
 const techList = [
   { name: 'JavaScript', icon: <SiJavascript /> },
@@ -37,17 +55,17 @@ const techList = [
   { name: 'Vim', icon: <SiVim /> },
 ];
 
-const TechSection = (
-  <div className={css['tech-wrapper']}>
+const Techs = (
+  <>
     {techList.map((tech) => (
-      <div key={tech.name} className={css['tag']}>
+      <Tag key={tech.name}>
         <div>
           {tech.icon}
           <span>{tech.name}</span>
         </div>
-      </div>
+      </Tag>
     ))}
-  </div>
+  </>
 );
 
-export default TechSection;
+export default Techs;

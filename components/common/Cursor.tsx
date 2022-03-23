@@ -1,7 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import styled from 'styled-components';
 
-import css from '../styles/Cursor.module.scss';
+import Theme from '../../constants/theme';
+
+const CursorWrapper = styled.div`
+  pointer-events: none;
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    mix-blend-mode: exclusion;
+    z-index: 1000;
+    circle {
+      fill: ${Theme.Background};
+    }
+  }
+`;
 
 interface Props {
   $hoverables: React.RefObject<HTMLAnchorElement>[];
@@ -53,22 +68,22 @@ const Cursor: React.FC<Props> = ({ $hoverables }) => {
         });
       });
     });
-  }, []);
+  }, [$hoverables]);
 
   return (
-    <div className={css['cursor-wrapper']}>
-      <div ref={$bigCursor} className={css['cursor']}>
+    <CursorWrapper>
+      <div ref={$bigCursor} className="cursor">
         <svg height="30" width="30">
           <circle cx="15" cy="15" r="12" strokeWidth="0"></circle>
         </svg>
       </div>
 
-      <div ref={$smallCursor} className={css['cursor']}>
+      <div ref={$smallCursor} className="cursor">
         <svg height="10" width="10">
           <circle cx="5" cy="5" r="4" strokeWidth="0"></circle>
         </svg>
       </div>
-    </div>
+    </CursorWrapper>
   );
 };
 

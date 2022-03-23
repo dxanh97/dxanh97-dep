@@ -17,18 +17,6 @@
     }
     .information-wrapper {
       display: flex;
-      .information-section {
-        margin-bottom: 40px;
-        h3 {
-          font-size: 24px;
-          letter-spacing: 2px;
-          font-family: Yeseva One;
-          text-transform: uppercase;
-          font-weight: 500;
-          margin-bottom: 32px;
-          text-decoration: underline 4px;
-        }
-      }
       & > div:first-child {
         width: 35%;
         padding-right: 16px;

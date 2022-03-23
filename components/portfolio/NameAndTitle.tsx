@@ -1,7 +1,42 @@
 import { RefObject } from 'react';
 import { FiGithub, FiMail, FiLinkedin } from 'react-icons/fi';
+import styled from 'styled-components';
 
-import css from '../styles/TopSection.module.scss';
+import Theme from '../../constants/theme';
+
+const Wrapper = styled.div`
+  text-align: right;
+  padding-right: 20px;
+  border-right: 4px solid ${Theme.Primary};
+`;
+const Name = styled.h1`
+  text-transform: uppercase;
+  font-family: Yeseva One;
+  font-size: 64px;
+  line-height: 80px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+`;
+const Title = styled.div`
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  span {
+    padding: 4px 8px;
+    letter-spacing: 2px;
+    background: ${Theme.Primary};
+    color: ${Theme.White};
+  }
+`;
+const ContactWrapper = styled.div`
+  a {
+    margin-left: 24px;
+    font-size: 24px;
+    svg {
+      vertical-align: bottom;
+    }
+  }
+`;
 
 interface ContactRefs {
   $mail: RefObject<HTMLAnchorElement>;
@@ -27,19 +62,19 @@ const contactList = (refs: ContactRefs) => [
   },
 ];
 
-const TopSection = (refs: ContactRefs) => (
-  <>
-    <h1 className={css['header']}>
+const NameAndTitle = (refs: ContactRefs) => (
+  <Wrapper>
+    <Name>
       Đặng
       <br />
       Xuân
       <br />
       Anh
-    </h1>
-    <div className={css['job-title']}>
+    </Name>
+    <Title>
       <span>Software Engineer</span>
-    </div>
-    <div className={css['contact-wrapper']}>
+    </Title>
+    <ContactWrapper>
       {contactList(refs).map((contact) => (
         <a
           key={contact.href}
@@ -51,8 +86,8 @@ const TopSection = (refs: ContactRefs) => (
           {contact.icon}
         </a>
       ))}
-    </div>
-  </>
+    </ContactWrapper>
+  </Wrapper>
 );
 
-export default TopSection;
+export default NameAndTitle;

@@ -7,8 +7,16 @@ import {
   RiMovie2Line,
   RiYoutubeLine,
 } from 'react-icons/ri';
+import styled from 'styled-components';
 
-import css from '../styles/InterestSection.module.scss';
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  svg {
+    margin-right: 8px;
+  }
+`;
 
 const interestList = [
   { name: 'Football', icon: <RiFootballLine /> },
@@ -19,15 +27,15 @@ const interestList = [
   { name: 'YouTube', icon: <RiYoutubeLine /> },
 ];
 
-const InterestSection = (
-  <div className={css['interests-wrapper']}>
+const Interests = (
+  <>
     {interestList.map((interest) => (
-      <div key={interest.name}>
+      <Wrapper key={interest.name}>
         {interest.icon}
         <span>{interest.name}</span>
-      </div>
+      </Wrapper>
     ))}
-  </div>
+  </>
 );
 
-export default InterestSection;
+export default Interests;
