@@ -11,6 +11,7 @@ import Interests from '../components/portfolio/Interests';
 import Experiences from '../components/portfolio/Experiences';
 
 import useCheckIsDesktop from '../hooks/use-check-is-desktop';
+import Layout from '../components/common/Layout';
 
 const ScrollWrapper = styled.div`
   height: 100vh;
@@ -20,6 +21,9 @@ const Wrapper = styled.div`
   margin: auto;
   padding-top: 60px;
   padding-bottom: 100px;
+  font-family: Lekton;
+  font-size: 20px;
+  line-height: 24px;
   @media (min-width: 1000px) {
     max-width: 1000px;
   }
@@ -64,44 +68,46 @@ const Home: NextPage = () => {
   const isDesktop = useCheckIsDesktop();
 
   return (
-    <ScrollWrapper>
-      <Wrapper>
-        <Head>
-          <title>{`<dxanh97 />`}</title>
-        </Head>
-        {isDesktop && (
-          <Cursor
-            $hoverables={[
-              $mail,
-              $github,
-              $linkedin,
-              $hisoft,
-              $bakco,
-              $codelink,
-            ]}
-          />
-        )}
-        {NameAndTitle({ $mail, $github, $linkedin })}
-        <InformationWrapper>
-          <div>
-            <InformationSection header="About" content={aboutMe} />
-            <InformationSection header="Tech" content={Techs} />
-            {isDesktop && (
-              <InformationSection header="Interests" content={Interests} />
-            )}
-          </div>
-          <div>
-            <InformationSection
-              header="Experiences"
-              content={Experiences({ $hisoft, $bakco, $codelink })}
+    <Layout>
+      <ScrollWrapper>
+        <Wrapper>
+          <Head>
+            <title>{`<dxanh97 />`}</title>
+          </Head>
+          {isDesktop && (
+            <Cursor
+              $hoverables={[
+                $mail,
+                $github,
+                $linkedin,
+                $hisoft,
+                $bakco,
+                $codelink,
+              ]}
             />
-            {!isDesktop && (
-              <InformationSection header="Interests" content={Interests} />
-            )}
-          </div>
-        </InformationWrapper>
-      </Wrapper>
-    </ScrollWrapper>
+          )}
+          {NameAndTitle({ $mail, $github, $linkedin })}
+          <InformationWrapper>
+            <div>
+              <InformationSection header="About" content={aboutMe} />
+              <InformationSection header="Tech" content={Techs} />
+              {isDesktop && (
+                <InformationSection header="Interests" content={Interests} />
+              )}
+            </div>
+            <div>
+              <InformationSection
+                header="Experiences"
+                content={Experiences({ $hisoft, $bakco, $codelink })}
+              />
+              {!isDesktop && (
+                <InformationSection header="Interests" content={Interests} />
+              )}
+            </div>
+          </InformationWrapper>
+        </Wrapper>
+      </ScrollWrapper>
+    </Layout>
   );
 };
 
