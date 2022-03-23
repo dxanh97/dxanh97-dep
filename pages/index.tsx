@@ -4,12 +4,13 @@ import type { NextPage } from 'next';
 import styled from 'styled-components';
 
 import Cursor from '../components/common/Cursor';
-
 import InformationSection from '../components/portfolio/InformationSection';
 import NameAndTitle from '../components/portfolio/NameAndTitle';
 import Techs from '../components/portfolio/Techs';
 import Interests from '../components/portfolio/Interests';
 import Experiences from '../components/portfolio/Experiences';
+
+import useCheckIsDesktop from '../hooks/use-check-is-desktop';
 
 const ScrollWrapper = styled.div`
   height: 100vh;
@@ -25,19 +26,31 @@ const Wrapper = styled.div`
 `;
 const InformationWrapper = styled.div`
   display: flex;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
   & > div:first-child {
     width: 35%;
-    padding-right: 16px;
+    padding: 0 16px;
+    @media (max-width: 600px) {
+      width: 100%;
+      box-sizing: border-box;
+    }
   }
   & > div:last-child {
     flex: 1;
-    padding-left: 16px;
+    padding: 0 16px;
+    @media (max-width: 600px) {
+      flex: unset;
+      width: 100%;
+      box-sizing: border-box;
+    }
   }
 `;
 
-const aboutMe = (years: number) => {
-  return `A self-learning, open-minded software engineer. Expertise in JavaScript/TypeScript with over ${years} years of experience. Software development is truly a craft and I aim to be a better craftsman on each passing day.`;
-};
+const aboutMe = `A self-learning, open-minded software engineer. Expertise in JavaScript/TypeScript with over ${
+  new Date().getFullYear() - 2018
+} years of experience. Software development is truly a craft and I aim to be a better craftsman on each passing day.`;
 
 const Home: NextPage = () => {
   const $mail = useRef<HTMLAnchorElement>(null);
@@ -48,30 +61,43 @@ const Home: NextPage = () => {
   const $bakco = useRef<HTMLAnchorElement>(null);
   const $codelink = useRef<HTMLAnchorElement>(null);
 
+  const isDesktop = useCheckIsDesktop();
+
   return (
     <ScrollWrapper>
       <Wrapper>
         <Head>
           <title>{`<dxanh97 />`}</title>
         </Head>
-        <Cursor
-          $hoverables={[$mail, $github, $linkedin, $hisoft, $bakco, $codelink]}
-        />
+        {isDesktop && (
+          <Cursor
+            $hoverables={[
+              $mail,
+              $github,
+              $linkedin,
+              $hisoft,
+              $bakco,
+              $codelink,
+            ]}
+          />
+        )}
         {NameAndTitle({ $mail, $github, $linkedin })}
         <InformationWrapper>
           <div>
-            <InformationSection
-              header="About"
-              content={aboutMe(new Date().getFullYear() - 2018)}
-            />
+            <InformationSection header="About" content={aboutMe} />
             <InformationSection header="Tech" content={Techs} />
-            <InformationSection header="Interests" content={Interests} />
+            {isDesktop && (
+              <InformationSection header="Interests" content={Interests} />
+            )}
           </div>
           <div>
             <InformationSection
               header="Experiences"
               content={Experiences({ $hisoft, $bakco, $codelink })}
             />
+            {!isDesktop && (
+              <InformationSection header="Interests" content={Interests} />
+            )}
           </div>
         </InformationWrapper>
       </Wrapper>

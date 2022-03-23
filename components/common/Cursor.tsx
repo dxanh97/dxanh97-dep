@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import styled from 'styled-components';
 
+import useCheckIsDesktop from '../../hooks/use-check-is-desktop';
+
 const CursorWrapper = styled.div`
   pointer-events: none;
   .cursor {
