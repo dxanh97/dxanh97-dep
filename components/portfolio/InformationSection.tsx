@@ -1,15 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const Header = styled.h3`
-  font-size: 24px;
-  letter-spacing: 2px;
-  font-family: Yeseva One;
-  text-transform: uppercase;
-  font-weight: 500;
-  margin-top: 40px;
-  text-decoration: underline 4px;
-`;
+import css from './InformationSection.module.scss';
 
 interface Props {
   header: string;
@@ -18,7 +9,7 @@ interface Props {
 
 const InformationSection: React.FC<Props> = ({ header, content }) => (
   <>
-    <Header>{header}</Header>
+    <h3 className={css['header']}>{header}</h3>
     {content}
   </>
 );

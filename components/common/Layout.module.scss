@@ -1,0 +1,13 @@
+@import 'theme';
+
+.wrapper {
+  margin: -10px;
+  background: $color-background;
+  font-family: Lekton;
+  font-size: 20px;
+  line-height: 24px;
+  * {
+    cursor: none;
+    color: $color-primary;
+  }
+}

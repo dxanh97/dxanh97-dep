@@ -1,15 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  margin: -10px;
-  background: ${(props) => props.theme.background};
-  * {
-    cursor: none;
-    color: ${(props) => props.theme.primary};
-  }
-`;
+import css from './Layout.module.scss';
 
-const Layout: React.FC = ({ children }) => <Wrapper>{children}</Wrapper>;
+const Layout: React.FC = ({ children }) => (
+  <div className={css['wrapper']}>{children}</div>
+);
 
 export default Layout;

@@ -16,24 +16,8 @@ import {
   SiTypescript,
   SiVim,
 } from 'react-icons/si';
-import styled from 'styled-components';
 
-const Tag = styled.div`
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 4px;
-  border: 1px solid ${(props) => props.theme.primary};
-  margin-right: 8px;
-  margin-bottom: 8px;
-  & > div {
-    display: flex;
-    align-items: center;
-    svg {
-      margin-right: 4px;
-      font-size: 16px;
-    }
-  }
-`;
+import css from './Techs.module.scss';
 
 const techList = [
   { name: 'JavaScript', icon: <SiJavascript /> },
@@ -56,12 +40,12 @@ const techList = [
 const Techs = (
   <>
     {techList.map((tech) => (
-      <Tag key={tech.name}>
+      <div key={tech.name} className={css['tag']}>
         <div>
           {tech.icon}
           <span>{tech.name}</span>
         </div>
-      </Tag>
+      </div>
     ))}
   </>
 );

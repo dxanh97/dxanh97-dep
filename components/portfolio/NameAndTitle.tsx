@@ -1,40 +1,7 @@
 import { RefObject } from 'react';
 import { FiGithub, FiMail, FiLinkedin } from 'react-icons/fi';
-import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  text-align: right;
-  padding-right: 20px;
-  border-right: 4px solid ${(props) => props.theme.primary};
-`;
-const Name = styled.h1`
-  text-transform: uppercase;
-  font-family: Yeseva One;
-  font-size: 64px;
-  line-height: 80px;
-  font-weight: 400;
-  letter-spacing: 4px;
-  margin-bottom: 16px;
-`;
-const Title = styled.div`
-  margin-bottom: 16px;
-  text-transform: uppercase;
-  span {
-    padding: 4px 8px;
-    letter-spacing: 2px;
-    background: ${(props) => props.theme.primary};
-    color: ${(props) => props.theme.white};
-  }
-`;
-const ContactWrapper = styled.div`
-  a {
-    margin-left: 24px;
-    font-size: 24px;
-    svg {
-      vertical-align: bottom;
-    }
-  }
-`;
+import css from './NameAndTitle.module.scss';
 
 interface ContactRefs {
   $mail: RefObject<HTMLAnchorElement>;
@@ -61,18 +28,18 @@ const contactList = (refs: ContactRefs) => [
 ];
 
 const NameAndTitle = (refs: ContactRefs) => (
-  <Wrapper>
-    <Name>
+  <div className={css['wrapper']}>
+    <h1 className={css['name']}>
       Đặng
       <br />
       Xuân
       <br />
       Anh
-    </Name>
-    <Title>
+    </h1>
+    <div className={css['title']}>
       <span>Software Engineer</span>
-    </Title>
-    <ContactWrapper>
+    </div>
+    <div className={css['contact-wrapper']}>
       {contactList(refs).map((contact) => (
         <a
           key={contact.href}
@@ -84,8 +51,8 @@ const NameAndTitle = (refs: ContactRefs) => (
           {contact.icon}
         </a>
       ))}
-    </ContactWrapper>
-  </Wrapper>
+    </div>
+  </div>
 );
 
 export default NameAndTitle;

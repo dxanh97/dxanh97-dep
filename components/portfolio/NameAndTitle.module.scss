@@ -1,0 +1,35 @@
+@import 'theme';
+
+.wrapper {
+  text-align: right;
+  padding-right: 20px;
+  border-right: 4px solid $color-primary;
+}
+.name {
+  text-transform: uppercase;
+  font-family: Yeseva One;
+  font-size: 64px;
+  line-height: 80px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+}
+.title {
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  span {
+    padding: 4px 8px;
+    letter-spacing: 2px;
+    background: $color-primary;
+    color: $color-white;
+  }
+}
+.contact-wrapper {
+  a {
+    margin-left: 24px;
+    font-size: 24px;
+    svg {
+      vertical-align: bottom;
+    }
+  }
+}

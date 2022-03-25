@@ -3,9 +3,7 @@ import { useState, useEffect } from 'react';
 const isBrowser = typeof window !== 'undefined';
 
 const useCheckIsDesktop = () => {
-  const [isDesktop, setIsDesktop] = useState(
-    isBrowser ? window.innerWidth > 600 : false,
-  );
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {

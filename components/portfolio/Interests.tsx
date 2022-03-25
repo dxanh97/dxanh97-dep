@@ -7,16 +7,8 @@ import {
   RiMovie2Line,
   RiYoutubeLine,
 } from 'react-icons/ri';
-import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-  svg {
-    margin-right: 8px;
-  }
-`;
+import css from './Interests.module.scss';
 
 const interestList = [
   { name: 'Football', icon: <RiFootballLine /> },
@@ -30,10 +22,10 @@ const interestList = [
 const Interests = (
   <>
     {interestList.map((interest) => (
-      <Wrapper key={interest.name}>
+      <div key={interest.name} className={css['wrapper']}>
         {interest.icon}
         <span>{interest.name}</span>
-      </Wrapper>
+      </div>
     ))}
   </>
 );
