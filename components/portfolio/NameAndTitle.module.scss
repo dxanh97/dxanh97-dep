@@ -3,7 +3,16 @@
 .wrapper {
   text-align: right;
   padding-right: 20px;
-  border-right: 4px solid $color-primary;
+  border-right: 4px solid;
+  border-image: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #a28a1e 10%,
+      #fdb931 15%,
+      #9f7928 30%,
+      #b18d3a 50%,
+      transparent 80%
+    )
+    1;
 }
 .name {
   text-transform: uppercase;
@@ -14,13 +23,30 @@
   letter-spacing: 4px;
   margin-bottom: 16px;
 }
+
 .title {
   margin-bottom: 16px;
   text-transform: uppercase;
   span {
     padding: 4px 8px;
     letter-spacing: 2px;
-    background: $color-primary;
+    // background: $color-primary;
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+        #fedb37 10%,
+        #fdb931 15%,
+        #9f7928 30%,
+        #8a6e2f 50%,
+        transparent 80%
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+        #f8eda8 10%,
+        #ffffac 15%,
+        #d1b464 25%,
+        #e1a721 62.5%,
+        #daa52d 100%
+      );
     color: $color-white;
   }
 }

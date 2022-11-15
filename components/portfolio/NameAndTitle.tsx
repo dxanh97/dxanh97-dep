@@ -30,11 +30,13 @@ const contactList = (refs: ContactRefs) => [
 const NameAndTitle = (refs: ContactRefs) => (
   <div className={css['wrapper']}>
     <h1 className={css['name']}>
-      Đặng
-      <br />
-      Xuân
-      <br />
-      Anh
+      <span className="gold-text">
+        Đặng
+        <br />
+        Xuân
+        <br />
+        Anh
+      </span>
     </h1>
     <div className={css['title']}>
       <span>Software Engineer</span>

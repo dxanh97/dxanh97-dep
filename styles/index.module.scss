@@ -32,4 +32,26 @@
       }
     }
   }
+  :global {
+    span.gold-text {
+      background: radial-gradient(
+          ellipse farthest-corner at right bottom,
+          #fedb37 0%,
+          #fdb931 15%,
+          #9f7928 30%,
+          #8a6e2f 50%,
+          transparent 80%
+        ),
+        radial-gradient(
+          ellipse farthest-corner at left top,
+          #ffffff 0%,
+          #ffffac 15%,
+          #d1b464 25%,
+          #e1a721 62.5%,
+          #daa52d 100%
+        );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
 }

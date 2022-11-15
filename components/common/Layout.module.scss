@@ -2,7 +2,12 @@
 
 .wrapper {
   margin: -10px;
-  background: $color-background;
+  background: linear-gradient(
+    300deg,
+    $color-background-start 0%,
+    $color-background-middle 50%,
+    $color-background-end 100%
+  );
   font-family: Lekton;
   font-size: 20px;
   line-height: 24px;
