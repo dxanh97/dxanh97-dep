@@ -42,7 +42,7 @@ const Techs = (
     {techList.map((tech) => (
       <div key={tech.name} className={css['tag']}>
         <div>
-          <span className="gold-text">{tech.icon}</span>
+          {tech.icon}
           <span>{tech.name}</span>
         </div>
       </div>

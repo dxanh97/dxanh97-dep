@@ -9,10 +9,8 @@ interface Props {
 
 const InformationSection: React.FC<Props> = ({ header, content }) => (
   <>
-    <h3 className={css['header']}>
-      <span className="gold-text">{header}</span>
-    </h3>
-    <span className="gold-text">{content}</span>
+    <h3 className={css['header']}>{header}</h3>
+    {content}
   </>
 );
 
