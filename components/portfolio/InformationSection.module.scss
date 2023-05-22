@@ -1,3 +1,5 @@
+@import 'theme';
+
 .header {
   font-size: 24px;
   letter-spacing: 2px;
@@ -5,4 +7,17 @@
   text-transform: uppercase;
   font-weight: 300;
   margin-top: 40px;
+  padding-left: 16px;
+  position: relative;
+  &::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $color-primary;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
