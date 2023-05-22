@@ -1,22 +1,23 @@
 import React from 'react';
+import { RiBilliardsLine, RiMovie2Line } from 'react-icons/ri';
 import {
-  RiFootballLine,
-  RiBilliardsLine,
-  RiTerminalBoxLine,
-  RiMusic2Line,
-  RiMovie2Line,
-  RiYoutubeLine,
-} from 'react-icons/ri';
+  TbBrandYoutube,
+  TbChessKing,
+  TbMusic,
+  TbSoccerField,
+  TbTerminal2,
+} from 'react-icons/tb';
 
 import css from './Interests.module.scss';
 
 const interestList = [
-  { name: 'Football', icon: <RiFootballLine /> },
   { name: 'Pool', icon: <RiBilliardsLine /> },
-  { name: 'Code', icon: <RiTerminalBoxLine /> },
-  { name: 'Music', icon: <RiMusic2Line /> },
+  { name: 'Chess', icon: <TbChessKing /> },
+  { name: 'Football', icon: <TbSoccerField /> },
+  { name: 'Code', icon: <TbTerminal2 /> },
+  { name: 'Music', icon: <TbMusic /> },
   { name: 'Movie', icon: <RiMovie2Line /> },
-  { name: 'YouTube', icon: <RiYoutubeLine /> },
+  { name: 'YouTube', icon: <TbBrandYoutube /> },
 ];
 
 const Interests = (
