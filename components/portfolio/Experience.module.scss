@@ -5,6 +5,9 @@
 }
 .company-role {
   margin-bottom: 8px;
+  b {
+    font-weight: 500;
+  }
 }
 .period {
   color: $color-caption;

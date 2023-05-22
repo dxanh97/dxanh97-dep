@@ -8,11 +8,7 @@ class MyDocument extends Document {
         <Head>
           <meta name="description" content="<dxanh97 />" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Lekton:wght@400;500;700&display="
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Yeseva+One:wght@400;500;700&display="
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display="
             rel="stylesheet"
           />
         </Head>
