@@ -37,9 +37,9 @@ const Home: NextPage = () => {
         <Cursor
           $hoverables={[$mail, $github, $linkedin, $hisoft, $bakco, $codelink]}
         />
-        {NameAndTitle({ $mail, $github, $linkedin })}
         <div className={css['information-wrapper']}>
           <div>
+            {NameAndTitle({ $mail, $github, $linkedin })}
             <InformationSection header="About" content={aboutMe} />
             <InformationSection header="Tech" content={Techs} />
             {isDesktop && (

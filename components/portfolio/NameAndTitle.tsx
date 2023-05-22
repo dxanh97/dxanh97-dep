@@ -29,28 +29,32 @@ const contactList = (refs: ContactRefs) => [
 
 const NameAndTitle = (refs: ContactRefs) => (
   <div className={css['wrapper']}>
-    <h1 className={css['name']}>
-      Đặng
-      <br />
-      Xuân
-      <br />
-      Anh
-    </h1>
-    <div className={css['title']}>
-      <span>Software Engineer</span>
-    </div>
-    <div className={css['contact-wrapper']}>
-      {contactList(refs).map((contact) => (
-        <a
-          key={contact.href}
-          ref={contact.ref}
-          target="_blank"
-          rel="noreferrer"
-          href={contact.href}
-        >
-          {contact.icon}
-        </a>
-      ))}
+    <div className={css['box']}>
+      <div className={css['content']}>
+        <h1 className={css['name']}>
+          Đặng
+          <br />
+          Xuân
+          <br />
+          Anh
+        </h1>
+        <div className={css['title']}>
+          <span>Software Engineer</span>
+        </div>
+        <div className={css['contact-wrapper']}>
+          {contactList(refs).map((contact) => (
+            <a
+              key={contact.href}
+              ref={contact.ref}
+              target="_blank"
+              rel="noreferrer"
+              href={contact.href}
+            >
+              {contact.icon}
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
   </div>
 );
